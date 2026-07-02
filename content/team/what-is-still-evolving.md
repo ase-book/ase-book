@@ -44,4 +44,4 @@ The current SDD tool set is still fragmented: multiple frameworks, different tra
 
 These are live practice questions, not decorative caveats. A few should settle before the next edition. A few will come back with new names and the same operational headache. That is the view from inside a young field: half the work is learning which problems are still real.
 
-*Sources: ThoughtWorks, Technology Radar Vol 34, April 2026, the assessment of the SDD tool set as fragmented with no dominant approach.*
+*Sources: ThoughtWorks, Technology Radar Vol 34, April 2026, semantic diffusion across spec-driven development and harness engineering terminology, with no single dominant framework named. The "fragmented" reading of that assessment is this book's.*

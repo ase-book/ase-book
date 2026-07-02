@@ -18,7 +18,7 @@ Only writing after a failure keeps the file short: nothing enters unless a real 
 
 The goal is not to remove improvisation. For most of what the agent does, from choosing an algorithm to shaping an API response, you want it drawing on everything it knows. Constrain every decision, and the instruction file stops being a context. It becomes a straitjacket.
 
-*Sources: Böckeler, "Navigating AI Development Workflows," Refactoring.fm, building up instructions reactively from observed failures. Anthropic, "Building effective agents" (December 2024), keeping the instruction surface minimal and load-bearing.*
+*Sources: Birgitta Böckeler, "Harness engineering for coding agent users" (martinfowler.com, April 2, 2026), improving the controls whenever an issue repeats. Anthropic, "Building effective agents" (December 2024), keeping the instruction surface minimal and load-bearing.*
 
 Instructions are for repo-specific decisions: the library you chose, the module boundary you drew, the naming convention your team settled after a long argument. General engineering knowledge belongs elsewhere. Instructions exist for the parts of the codebase history the agent will not reconstruct reliably from code alone.
 
@@ -52,7 +52,7 @@ Most languages have an architectural constraint testing framework that encodes e
 
 Package boundaries need the same treatment. "The `payments` module has no dependency on `users`. If a change requires one, raise it in the PR before implementing" prevents the agent from adding an import edge that breaks the dependency graph. Without the instruction, the agent sees a useful function in `users`, imports it, and opens a PR that passes local tests but fails the architecture check.
 
-*Sources: Böckeler, "Navigating AI Development Workflows," Refactoring.fm, negative and boundary instructions in an agent workflow. Anthropic, "Building effective agents" (December 2024), explicit constraints and guardrails over implicit ones.*
+*Sources: Birgitta Böckeler, "Harness engineering for coding agent users" (martinfowler.com, April 2, 2026), feedforward controls that externalize developer judgment into explicit guides. Anthropic, "Building effective agents" (December 2024), explicit constraints and guardrails over implicit ones.*
 
 ## Let the agent draft the instruction
 

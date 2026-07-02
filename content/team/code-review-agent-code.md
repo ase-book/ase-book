@@ -61,7 +61,7 @@ This step is not free. For high-stakes behavioral changes with many acceptance c
 
 Choosing between a fresh session and a second model family is the same tradeoff [Spec Lifecycle](../spec-driven/spec-lifecycle) works out for spec critique: the fresh session removes context contamination, the second model family removes shared blind spots. A portable instruction set lowers the switching cost, which is one reason [Instruction Hub](../agent-instructions/instruction-hub) argues for shared agent-facing files instead of tool-specific ones.
 
-*Sources: Birgitta Böckeler, ["Navigating AI Development Workflows"](https://refactoring.fm/p/navigating-ai-development-workflows), Refactoring.fm, using a second model or fresh session to critique a spec without implementation-context bias.*
+*Sources: Rick Hightower, "Agentic Coding: GSD vs Spec Kit vs OpenSpec vs Taskmaster AI" (February 27, 2026), multimodel critique as an emerging step in spec-driven workflows. The fresh-session variant without implementation-context bias is this book's practice.*
 
 ## What human reviewers miss, what agent reviewers miss
 
