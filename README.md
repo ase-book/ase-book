@@ -8,7 +8,7 @@ This repository holds the VitePress source for the book *Intent Engineering for 
 
 ## Companion repository
 
-The book has a companion CLI, `iec` (Intent Engineering Checker), at https://github.com/intent-engineering-for-coding-agents/cli. It checks a repo for the conventions the book describes: `AGENTS.md`, ADRs, OpenSpec specs, and test traceability. The book treats it as worked evidence, not a required tool.
+The book has a companion CLI and example repository, `iec` (Intent Engineering Checker), at https://github.com/intent-engineering-for-coding-agents/cli. It concretely shows how to structure a repository as the book describes, including `AGENTS.md`, ADRs, OpenSpec specs, and test traceability. It is a real tool, but it exists primarily as an illustrative companion and is not production-grade.
 
 ## Build locally
 
