@@ -10,7 +10,7 @@ The taxonomy below is a working set for agent-readable repos. It combines establ
 
 Content documents are the baseline: wiki pages, guides, articles, reference documentation. They carry no lifecycle constraint, no structural requirement, and no size limit the agent must respect. Write them, update them in place, and let them grow or shrink as the subject demands.
 
-The other types carry stronger rules. That asymmetry is the point.
+The other types carry stronger rules because the agent needs to know whether each document is current, frozen, or ready to archive.
 
 The enforcement mechanism is directory placement. Structured documents live under `docs/`. Content documents live outside it, in whatever directory fits the team's setup: `content/`, `wiki/`, `pages/`. A convention check scopes its validators to `docs/` and `openspec/`. `AGENTS.md` points the agent at those same places.
 
@@ -48,7 +48,7 @@ That gives it a lifecycle: live while the brownfield recovery is in progress, re
 
 ## Architectural Decision Records
 
-Architectural Decision Records (ADRs) record specific decisions: what was decided, what alternatives were considered, why this option won, and what consequences follow. What matters is the why behind the decision.
+Architectural Decision Records (ADRs) record what was decided, which alternatives were considered, why this option won, and what consequences follow. The rationale stops the next agent from reopening rejected options or treating an old compromise as a general rule.
 
 While an ADR is still proposed, change it as much as the discussion requires. Once its status moves to `accepted`, the decision freezes. Reversing it means writing a new ADR that references the old one and supersedes it, not rewriting the original to say something different.
 
@@ -120,7 +120,7 @@ The `iec` CLI repository has the structure live:
 - design docs in `docs/design/`
 - specs in `openspec/specs/` with completed changes archived
 
-Run `iec check` and the structural validators pass. The point is that a later session can tell a live spec from an archived one without asking you.
+Run `iec check` and the structural validators pass. A later session then distinguishes a live spec from an archived one without asking you.
 
 *Sources: `iec` CLI (github.com/intent-engineering-for-coding-agents/cli), the document taxonomy applied to a live project.*
 

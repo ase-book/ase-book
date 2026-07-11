@@ -8,7 +8,7 @@ The five failure modes below remain after good initial setup. They are not begin
 
 The entry point goes stale. The agent instructions say to follow the old module layout, while an ADR reversed that layout months ago. Nobody updated the agent instructions, so the agent reads them, not the ADR, and produces code shaped for the old system.
 
-The fix is structural and slightly painful. Treat agent instructions as part of the architecture, not part of the initial setup. Any PR changing something the agent instructions describe must update them in the same commit. No CI check catches "the convention you describe no longer matches the code". The Agent Instructions topic covers what to put in `AGENTS.md` and `.agents/instructions/...`. Keeping these current stays your job.
+Treat agent instructions as part of the architecture, not part of the initial setup. Any PR changing something the agent instructions describe must update them in the same commit. No CI check catches "the convention you describe no longer matches the code". The Agent Instructions topic covers what to put in `AGENTS.md` and `.agents/instructions/...`. Keeping these current stays your job.
 
 ## Dead specs
 
@@ -16,7 +16,7 @@ Open `openspec/changes/` (the OpenSpec change folder, if your team uses OpenSpec
 
 Without an archive step, the agent has no signal to distinguish a canceled spec from an active one. Whatever it reads, it reads as live instruction. De Schryver's case for keeping agentic workflows simple applies directly here: the clutter compounds with every change the team leaves un-archived.
 
-A dead spec is worse than no spec. It tells the agent, with confidence, about behavior the system no longer has, decisions that were reversed, and acceptance criteria never checked. Worse, it does so as the agent's first read of the change folder. Archive immediately after implementation. The [Spec Lifecycle](../spec-driven/spec-lifecycle) chapter builds the archive discipline that prevents this.
+A dead spec gives the agent confident instructions about behavior the system no longer has, decisions that were reversed, and acceptance criteria nobody checked. Those instructions enter the same context as the current implementation, with no status telling the agent which one to trust. Archive the spec immediately after the change ships. The [Spec Lifecycle](../spec-driven/spec-lifecycle) chapter builds this discipline into the workflow.
 
 *Sources: De Schryver, "Keep Agentic AI Simple" (2026), clutter as a compounding factor in agent context.*
 
@@ -58,7 +58,7 @@ Each topic targets one or more of these modes directly:
 
 Cognitive debt is the cost that grows when these modes go unaddressed: the undocumented decision that quietly breaks a deployment months later. ThoughtWorks uses "harness engineering" for the controls that keep the agent's context coherent enough to hold that debt down. The rest of this book is about building those controls, one failure mode at a time.
 
-You will still get drift. The win is catching the mismatch before three stale assumptions turn into one bad deploy.
+Drift will still happen. Catch the mismatch before stale assumptions turn into one bad deploy.
 
 Six months of accumulated mismatch usually trace back to what the agent was reading. The Agent Instructions topic covers which files it should load and how to keep them current.
 

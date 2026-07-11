@@ -24,7 +24,7 @@ At human speed, drift like this used to take quarters to compound. At agentic sp
 
 ## Structure as context
 
-Whatever lives in `docs/` (the durable design record), `AGENTS.md` (the agent's instructions), and `openspec/` (the active and archived specs when using OpenSpec) is what the agent reads. Whatever else the team knows, the agent invents from plausible-looking patterns. The agent improvises wherever the codebase stays silent. The only question is how much silence you leave.
+Whatever lives in `docs/` (the durable design record), `AGENTS.md` (the agent's instructions), and `openspec/` (the active and archived specs when using OpenSpec) is what the agent reads. For anything the team knows but never wrote down, the agent falls back to plausible-looking patterns. Every silent decision leaves room for improvisation.
 
 Chat sessions end with the session. Committed instructions, docs, and specs carry forward into the next run: local session, CI job, new laptop, and fresh clone all start from the same files. The codebase becomes the shared context source.
 
@@ -63,7 +63,7 @@ Chosen option: gRPC. It is the only option that satisfies all three constraints.
 
 The agent does not have to read the reasoning to find the constraint. `## Decision Outcome` and `### Consequences` put the rule where the agent finds it. From there, the agent proposes a `.proto` definition with the right method shape, or asks first. The decision is enforced inside the system that created the temptation, instead of caught later by a reviewer who happened to remember the migration meeting from months back.
 
-None of this is about policing the agent. The mechanism is simpler: put the decision, constraint, and file map in the codebase before asking the agent to extend the system.
+Put the decision, constraint, and file map in the codebase before asking the agent to extend the system. The agent then works from project knowledge instead of a reviewer catching the mismatch later.
 
 *Sources: `iec` repo structure and this repo's AGENTS.md conventions, the docs/ + AGENTS.md + openspec/ layout the agent reads as its context. OpenSpec documentation (ongoing), the openspec/ directory where specs live.*
 

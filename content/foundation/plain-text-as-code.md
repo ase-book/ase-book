@@ -2,7 +2,7 @@
 
 I have spent forty years watching useful engineering work disappear into Word documents, PowerPoint decks, Visio files, and whichever proprietary tool was fashionable at the time. The files are often still around. Opening them is another matter. You need the right application and license, sometimes on an old laptop nobody wants to touch. A connector puts one more dependency between the developer and the decision.
 
-I want the source to remain readable with a text editor. Not necessarily `vi`. I do not like `vi`, although plenty of developers do. The point is that no expensive tool or bloated editing environment should stand between a developer and the architecture.
+I want the source to remain readable with a text editor. Not necessarily `vi`. I do not like `vi`, although plenty of developers do. No expensive tool or bloated editing environment should stand between a developer and the architecture.
 
 If the agent needs the information, put the source in the repo as plain text. Almost every other Intent Engineering Foundation practice depends on this constraint.
 

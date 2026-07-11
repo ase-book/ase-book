@@ -4,7 +4,7 @@ Consider a retry policy buried in a function called `do_it_again_lol`. Every leg
 
 An agent dropped into this environment improvises. At agentic speed, that improvisation compounds existing drift.
 
-The Foundation chapters work from intent, and so does greenfield development with coding agents: a codebase built from scratch, with no prior decisions to inherit. Before the first commit, you plan the tech stack with the agent as a sparring partner, weigh tradeoffs, and record decisions as ADRs. Specs exist before implementations do. This is the structural advantage greenfield gives you: a complete history, built forward from the beginning.
+The Foundation chapters work from intent, and so do greenfield development with coding agents: a codebase built from scratch, with no prior decisions to inherit. Before the first commit, you plan the tech stack with the agent as a sparring partner, weigh tradeoffs, and record decisions as ADRs. Specs exist before implementations do. Greenfield gives you a complete history built forward from the beginning.
 
 Brownfield teams adopt most of these practices immediately, without a rewrite. Agent instructions get written this week. New decisions get ADRs from this point forward. A spec-driven workflow starts on the next ticket.
 
@@ -42,7 +42,7 @@ The same prompt accepts an output layout. Append the target `docs/` structure an
 
 Alistair Cockburn coined "walking skeleton" in "Crystal Clear" (2004). His version is a thin end-to-end implementation built forward from intent. Enough to verify the architecture works before you fill it in.
 
-The agentic-era `skeleton.md` reverses the direction. You are not building a skeleton to verify an architecture, but uncovering the skeleton of an architecture built without one. Same metaphor, opposite direction. The result has the same purpose: it makes the invisible structure visible, so you reason about it and build on it.
+The agentic-era `skeleton.md` works backward from an implementation already in production. Instead of testing a proposed architecture, it exposes the structure the codebase accumulated. Once the modules, dependencies, and constraints are visible, the team has something concrete to correct and build on.
 
 *Sources: Cockburn, "Crystal Clear: A Human-Powered Methodology for Small Teams" (Addison-Wesley, 2004), origin of the walking-skeleton pattern.*
 
