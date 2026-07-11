@@ -2,7 +2,7 @@
 
 A spec and its tests are supposed to be the same promise written twice. Consider a spec with scenarios and a PR with tests. Some scenarios have no test at all, and some tests cover behavior the spec never mentioned. The reviewer approves it because the tests pass and the diff looks reasonable. The next change breaks the untested scenario, and the team hears about it from a customer.
 
-A spec and a test suite that drift apart silently defeat the point. The spec promises traceability, while the suite no longer honors the promise. A stable identifier on every acceptance criterion keeps the link visible, and CI checks whether something carrying the identifier runs.
+A spec and a test suite that drift apart silently defeat the point. The spec promises traceability, but the link to the tests has broken. A stable identifier on every acceptance criterion keeps the link visible, and CI checks whether something carrying the identifier runs.
 
 I first saw the value of acceptance criterion identifiers at a former employer. Customers and developers had one short name for the behavior under discussion. Nobody had to guess which paragraph, ticket comment, or test somebody meant.
 

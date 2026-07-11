@@ -36,7 +36,7 @@ The same thing happens across security decisions. The agent hardcodes a token fr
 
 Encode the non-negotiable decisions and the question never gets asked. Certificate verification stays on, written into an agent instruction the agent reads before it touches transport code.
 
-If the test environment needs an exception, the exception is scoped to test code and gated behind a CI check that blocks production builds containing test-only exceptions. Debug endpoints get a naming convention that a lint rule catches at build time. The agent will honor explicit rules it reads before the session starts. It will not invent them.
+If the test environment needs an exception, the exception is scoped to test code and gated behind a CI check that blocks production builds containing test-only exceptions. Debug endpoints get a naming convention that a lint rule catches at build time. The agent will follow explicit rules it reads before the session starts. It will not invent them.
 
 ## The cleanup PR that removes a control
 

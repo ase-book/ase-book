@@ -1,6 +1,6 @@
 # Context Window Management
 
-A long agent session does not announce when it starts forgetting. The answers get shorter and a little more generic. A constraint the agent read early stops being honored, or a decision it made an hour ago gets contradicted by one it makes now. Nothing failed and nobody reset anything. The context that mattered either dropped off the back to make room, or it is still in the window, and the agent has quietly stopped attending to it.
+A long agent session does not announce when it starts forgetting. The answers get shorter and a little more generic. The agent ignores a constraint it read early, or contradicts a decision it made an hour ago. Nothing failed and nobody reset anything. The context that mattered either dropped off the back to make room, or it is still in the window, and the agent has quietly stopped attending to it.
 
 This failure is not a bug. Every token in the context window carries two costs. The first cost is reliability. In a session that overflows, old tokens fall out as new ones arrive and the agent loses earlier context.
 
