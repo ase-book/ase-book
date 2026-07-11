@@ -15,6 +15,22 @@ export default withMermaid(
     sitemap: {
       hostname: 'https://intent-engineering-for-coding-agents.github.io/book/',
     },
+    transformHead({ pageData }) {
+      const relativePath = pageData.relativePath
+      const pagePath = relativePath === 'index.md'
+        ? ''
+        : relativePath.endsWith('/index.md')
+          ? relativePath.slice(0, -'index.md'.length)
+          : relativePath.replace(/\.md$/, '.html')
+
+      return [[
+        'link',
+        {
+          rel: 'canonical',
+          href: `https://intent-engineering-for-coding-agents.github.io/book/${pagePath}`,
+        },
+      ]]
+    },
     head: [
       ['meta', { name: 'author', content: 'Flemming Nørnberg Larsen' }],
       ['meta', { property: 'og:type', content: 'website' }],
@@ -30,7 +46,7 @@ export default withMermaid(
       ['meta', { name: 'twitter:title', content: 'Intent Engineering for Coding Agents' }],
       ['meta', { name: 'twitter:description', content: 'How humans and coding agents design software together.' }],
       ['meta', { name: 'twitter:image', content: 'https://intent-engineering-for-coding-agents.github.io/book/og-image.png?v=3' }],
-      // Privacy-friendly, cookieless analytics (GoatCounter) — no GDPR consent banner needed.
+      // Cookieless traffic analytics. Collection details are published on the privacy page.
       ['script', {
         'data-goatcounter': 'https://intent-engineering.goatcounter.com/count',
         async: '',
@@ -62,6 +78,7 @@ export default withMermaid(
         { text: 'Appendices', link: '/appendices/honest-maturity' },
         { text: 'About', link: '/appendices/about' },
         { text: 'Feedback', link: '/appendices/feedback' },
+        { text: 'Privacy', link: '/appendices/privacy' },
       ],
       sidebar: [
         { text: 'Overview', link: '/overview' },
@@ -140,6 +157,7 @@ export default withMermaid(
             { text: 'Tooling Landscape', link: '/appendices/tooling-landscape' },
             { text: 'Companion Repo', link: '/appendices/companion-repo' },
             { text: 'Feedback & Contributing', link: '/appendices/feedback' },
+            { text: 'Privacy', link: '/appendices/privacy' },
             { text: 'Credits', link: '/appendices/credits' },
             { text: 'References', link: '/appendices/references' },
             { text: 'About the Author', link: '/appendices/about' },

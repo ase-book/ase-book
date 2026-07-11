@@ -1,6 +1,7 @@
 {
   "name": "intent-engineering-for-coding-agents",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "private": true,
   "description": "Intent Engineering for Coding Agents: How humans and coding agents design software together",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +15,8 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
+    "mermaid": "^11.16.0",
     "vitepress": "^1.6.3",
-    "vitepress-plugin-mermaid": "^2.0.17",
-    "mermaid": "^11.4.1"
+    "vitepress-plugin-mermaid": "^2.0.17"
   }
 }
