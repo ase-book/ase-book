@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Intent Engineering for Coding Agents
-description: "Intent Engineering for Coding Agents: How developers keep design, specs, and generated code aligned"
+description: "Intent Engineering for Coding Agents: How humans and coding agents design software together"
 hero:
   name: Intent Engineering
   text: for Coding Agents
-  tagline: How developers keep design, specs, and generated code aligned.
+  tagline: How humans and coding agents design software together.
   image:
     light: /logo-light.svg
     dark: /logo-dark.svg
