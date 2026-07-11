@@ -1,12 +1,12 @@
 # Before, During, After: The Three Checkpoints
 
-A change clears every gate at merge time and still runs wrong three weeks later. The spec is solid, the tests are real proof, and the PR lands clean. Then you find a comment pointing at a design document that no longer matches the code. The decision it depended on was reversed in a different PR, and nothing caught the mismatch because the change sat outside the diff anyone reviewed.
+A change clears every gate at merge time and still runs wrong three weeks later. The spec is solid, the tests are real evidence, and the PR lands clean. Then you find a comment pointing at a design document that no longer matches the code. The decision it depended on was reversed in a different PR, and nothing caught the mismatch because the change sat outside the diff anyone reviewed.
 
 Quality is not a single gate. It is three, in sequence, and each catches a failure the other two miss.
 
 - **Before:** did the work start from legible architecture, current agent instructions, and a reviewed spec?
 - **During:** is the implementation running against that spec and the commit hooks, or has the session drifted?
-- **After:** do the tests prove the acceptance criteria, and does the merged work update the engineering memory the next agent reads?
+- **After:** do the tests verify the acceptance criteria, and does the merged work update the engineering memory the next agent reads?
 
 ## Before: the foundation gate
 
@@ -14,9 +14,9 @@ The before-gate does not build the foundation. Earlier chapters did that: legibl
 
 That question is cheaper than it sounds because most of it is deterministic. A hub that points at a file that no longer exists loads nothing, and the agent codes against a convention it never saw. A repo-level checker catches structural failures like broken instruction links. The companion workflow adds file-size and index-staleness checks too. What stays manual is the judgment no scan makes: whether the architecture the docs describe is the architecture the agent will meet in the code.
 
-[Keeping Documentation Up to Date](./keeping-docs-up-to-date) adds one more deterministic layer to this gate: a document declares which code it describes, and a validator flags the document when the code changed after the last review date. The check does not prove the prose is right. The check proves nobody has re-verified it since the source moved.
+[Keeping Documentation Up to Date](./keeping-docs-up-to-date) adds one more deterministic layer to this gate: a document declares which code it describes, and a validator flags the document when the code changed after the last review date. The check does not verify the prose is right. The check verifies nobody has re-verified it since the source moved.
 
-One input sits upstream of the spec itself: the architectural decision the spec executes. The chain runs ADR, then design doc, then spec ([Spec Lifecycle](../spec-driven/spec-lifecycle)). Freeze a spec against a decision still open, or against one reversed in a later PR, and the spec executes a decision the architecture no longer follows. The gate confirms the governing ADR is approved, and the design doc the spec leans on still says what the spec assumes. A link checker proves the reference resolves. Whether the decision still holds is the same manual judgment the architecture check already demands.
+One input sits upstream of the spec itself: the architectural decision the spec executes. The chain runs ADR, then design doc, then spec ([Spec Lifecycle](../spec-driven/spec-lifecycle)). Freeze a spec against a decision still open, or against one reversed in a later PR, and the spec executes a decision the architecture no longer follows. The gate confirms the governing ADR is approved, and the design doc the spec leans on still says what the spec assumes. A link checker verifies the reference resolves. Whether the decision still holds is the same manual judgment the architecture check already demands.
 
 *Sources: Anthropic, "Building effective agents" (December 2024), preparing the agent's context before it starts work. AGENTS.md (agents.md, ongoing), AGENTS.md as a project-level entry point for agent instructions. The repo-level checker and companion-workflow examples in this section are this book's synthesis built on the documentation-drift and AGENTS.md-check patterns described elsewhere in the book.*
 
@@ -38,18 +38,18 @@ The minimum during-checkpoint is three questions. Is the spec the same one the a
 
 The after-checkpoint runs on what was produced. The spec is done, the implementation is done, and the tests pass. The question is whether the artifact closes the gap.
 
-The verification checks the things automation cannot catch on its own. Did the implementation introduce code unrelated to the spec? Scope creep in agentic PRs is common. The agent passes through a file, fixes things it noticed along the way, and those fixes ship without review. Do the new tests prove the acceptance criteria or behavior the agent invented? An AC ID linking a scenario to a test that asserts something different is the silent-drift failure mode.
+The verification checks the things automation cannot catch on its own. Did the implementation introduce code unrelated to the spec? Scope creep in agentic PRs is common. The agent passes through a file, fixes things it noticed along the way, and those fixes ship without review. Do the new tests verify the acceptance criteria or behavior the agent invented? An AC ID linking a scenario to a test that asserts something different is the silent-drift failure mode.
 
 State the split plainly:
 
 | Check | Hard gate or advisory | What it checks |
 |---|---|---|
 | AC ID exists | hard gate | spec and tests are linked |
-| positive/negative pair exists | hard gate | proof shape is present |
+| positive/negative pair exists | hard gate | evidence shape is present |
 | test actually matches `GIVEN` / `WHEN` / `THEN` | advisory review | semantic alignment |
 | scope creep beyond spec | advisory review | intent drift |
 
-CI proving that `PAY-022` exists in both the spec and the test tags is useful. That same CI job does not prove the tagged test asserts timeout behavior. The test might only assert that one request returns `500`. The link exists. The meaning is still wrong. That second check stays with review.
+CI verifying that `PAY-022` exists in both the spec and the test tags is useful. That same CI job does not verify the tagged test asserts timeout behavior. The test might only assert that one request returns `500`. The link exists. The meaning is still wrong. That second check stays with review.
 
 One closing check has nothing to do with the diff and everything to do with what the diff invalidated. Reverse an earlier decision, and the ADR that recorded it along with any design doc citing it now describes a system no longer in the code.
 
@@ -79,13 +79,13 @@ graph TD
     A --> M(["Merge + archive"])
 ```
 
-Each gate catches a different break. Skip the before-gate and the agent works from stale docs, dead links, or a design decision the codebase already reversed. Skip the during-gate and the session keeps moving after the spec changed or the context window lost the thread. The after-gate is different: skip it and the PR lands code the spec never asked for, backed by tests that prove something adjacent. The gates overlap less than they look.
+Each gate catches a different break. Skip the before-gate and the agent works from stale docs, dead links, or a design decision the codebase already reversed. Skip the during-gate and the session keeps moving after the spec changed or the context window lost the thread. The after-gate is different: skip it and the PR lands code the spec never asked for, backed by tests that verify something adjacent. The gates overlap less than they look.
 
 ## Where the attention goes
 
-Every gate splits in two. Hooks and CI catch broken links, oversized files, missing AC IDs, and missing test pairs. Review handles the part the scanner cannot reach: whether the spec picked the right behavior, whether the code took the right form, whether the test proves the named scenario instead of a nearby one. Push structure into automation. Spend review time on meaning.
+Every gate splits in two. Hooks and CI catch broken links, oversized files, missing AC IDs, and missing test pairs. Review handles the part the scanner cannot reach: whether the spec picked the right behavior, whether the code took the right form, whether the test verifies the named scenario instead of a nearby one. Push structure into automation. Spend review time on meaning.
 
-This book treats deterministic checks as hard gates; semantic AI review stays advisory unless your team has already proved a stronger workflow.
+This book treats deterministic checks as hard gates; semantic AI review stays advisory unless your team has already verified a stronger workflow.
 
 The work is uneven. Most of the before-gate is maintenance, most of the during-gate is automation, and the after-gate is the expensive one: scope creep and tests that assert adjacent behavior instead of the named scenario do not fail a CI check.
 

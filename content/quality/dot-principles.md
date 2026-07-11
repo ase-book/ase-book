@@ -2,7 +2,7 @@
 
 There is a kind of bad code that passes every check you automate. The tests are green, the spec is matched, the PR taxonomy is clean, and the reviewer has nothing concrete to flag. The code is correct and also clumsy: nested conditionals where a guard clause would read better, a `processData` that does three unrelated things, a class with seven public methods and two callers. Nothing is wrong, and nothing is good. The person who would have caught it is the senior reviewer the team adopted agentic tooling to free up.
 
-Specs verify behavior, tests verify proof, and PR taxonomy verifies hygiene, but none of them verify quality in the sense a senior reviewer means quality: the code's readability, its adherence to the principles the team values, the small choices that compound into a codebase the next developer has to maintain.
+Specs state behavior, tests verify behavior, and PR taxonomy verifies hygiene, but none of them verify quality in the sense a senior reviewer means quality: the code's readability, its adherence to the principles the team values, the small choices that compound into a codebase the next developer has to maintain.
 
 ## The gap
 
@@ -16,7 +16,7 @@ This book uses three distinct questions to separate the layers: what should the 
 
 The third question carries more weight the moment no reviewer is in the room. An agent running unattended cannot ask a senior developer whether the code is well-shaped, so the judgment has to already live somewhere the agent reads. Tests answer whether the code meets the spec. Principles answer whether it follows the practice the field already treats as good, each one backed by a citable source rather than local taste.
 
-This is why a team encodes quality as principles at all. Proof is the exit signal an unattended run cannot do without. Principles are the second signal a team adds beside it, advisory until the catalog earns enough trust to block. A solo developer or team might extend the catalog with their own principles, but the weight comes from the established ones.
+This is why a team encodes quality as principles at all. Evidence is the exit signal an unattended run cannot do without. Principles are the second signal a team adds beside it, advisory until the catalog earns enough trust to block. A solo developer or team might extend the catalog with their own principles, but the weight comes from the established ones.
 
 This is a different gap from style. A linter handles indentation, naming conventions, line length. A style guide is the deterministic version of taste. Principles are the cases where deterministic rules do not fit: when nesting is excessive, when a function has grown beyond one purpose, when an abstraction is leaking, when a refactor was started and not finished. The judgment of "this is too nested" is something a senior reviewer makes. The principle file makes the judgment reusable across reviewers, including agent ones.
 
@@ -30,7 +30,7 @@ The framework is optional. A team using Intent Engineering without `.principles`
 
 The audit step depends on the model. A model that does not have the principle in context will miss the violation. A model that has it but is unreliable in this kind of judgment will flag the wrong things. The signal-to-noise of the audit improves with practice: which principles are easy to check, which catch real issues, which produce too many false positives to be useful.
 
-Principles also become bureaucracy. A catalog of 50 principles that nobody applies is a long document. The discipline is to keep the catalog small, the principles concrete, and the audit pass advisory rather than blocking until the catalog has earned trust. Start with three principles the team agrees on, audit against those, and add more when the first three have proven their worth.
+Principles also become bureaucracy. A catalog of 50 principles that nobody applies is a long document. The discipline is to keep the catalog small, the principles concrete, and the audit pass advisory rather than blocking until the catalog has earned trust. Start with three principles the team agrees on, audit against those, and add more when the first three have earned their place.
 
 ## Tooling note
 

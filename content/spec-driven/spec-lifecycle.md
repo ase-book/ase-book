@@ -50,7 +50,7 @@ In this book's workflow, CI is the natural place to trigger both. The last check
 
 OpenSpec already does the mechanical part. `/opsx:propose` generates `tasks.md` alongside the proposal and specs. `/opsx:apply` works through the tasks one by one, writes the code, runs tests as needed, and marks each checkbox. You neither write the list nor tick it off.
 
-What the agent will not do is decompose the way your team would. Left to its priors, it groups tasks by functional area, runs tests "as needed" rather than per criterion, and carries no thread from a scenario to the test that proves it. None of that breaks OpenSpec's rules, because OpenSpec has none here: requirements and scenarios are named, not ID'd, and a scenario is only a "potential test case", bound to nothing.
+What the agent will not do is decompose the way your team would. Left to its priors, it groups tasks by functional area, runs tests "as needed" rather than per criterion, and carries no thread from a scenario to the test that verifies it. None of that breaks OpenSpec's rules, because OpenSpec has none here: requirements and scenarios are named, not ID'd, and a scenario is only a "potential test case", bound to nothing.
 
 So you constrain the generation instead of performing it. Put the conventions in an instruction file next to the workflow, for example `.agents/instructions/openspec.md`, and hand-edit nothing:
 
@@ -62,7 +62,7 @@ So you constrain the generation instead of performing it. Put the conventions in
 - Do not defer tests to a final task. A task is done when its tests pass.
 ```
 
-Now `/opsx:apply` runs a typed test for every criterion instead of testing at its own discretion, and `/opsx:verify` has a concrete trail to check. The AC ID travels from spec to test, so a large change splits across several PRs safely: each closes a handful of tasks, ships the tests that prove them, and merges on a passing suite. Leave tests to the agent's "as needed" and the early PRs merge unproven.
+Now `/opsx:apply` runs a typed test for every criterion instead of testing at its own discretion, and `/opsx:verify` has a concrete trail to check. The AC ID travels from spec to test, so a large change splits across several PRs safely: each closes a handful of tasks, ships the tests that verify them, and merges on a passing suite. Leave tests to the agent's "as needed" and the early PRs merge unchecked.
 
 Fork the tool, and you own the merge conflict on its next release. Layer an instruction file and the conventions are yours while the workflow stays standard. The four lines above are the gist.
 

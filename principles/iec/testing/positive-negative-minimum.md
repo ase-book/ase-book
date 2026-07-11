@@ -3,15 +3,15 @@
 **Layer**: 1
 **Categories**: testing, coverage, ac-ids
 **Applies-to**: code
-**Summary**: Every acceptance criterion has at least one positive and one negative test — happy-path-only is not proof.
+**Summary**: Every acceptance criterion has at least one positive and one negative test — happy-path-only is not evidence.
 
 ## Principle
 
-Every acceptance criterion has at least one positive test and at least one negative test, unless the scenario has only one direction to verify. A positive test proves the THEN holds when the WHEN is satisfied. A negative test proves the THEN does not fire when the WHEN is not satisfied: no false positives, no silent accepts. Both are required at every scenario complexity tier.
+Every acceptance criterion has at least one positive test and at least one negative test, unless the scenario has only one direction to verify. A positive test verifies the THEN holds when the WHEN is satisfied. A negative test verifies the THEN does not fire when the WHEN is not satisfied: no false positives, no silent accepts. Both are required at every scenario complexity tier.
 
 ## Why it matters
 
-A positive-only test suite proves the system does the right thing when conditions are right. It proves nothing about what the system does when conditions are wrong. An AC that says "reject invalid input" with only a test for valid input passing proves nothing about rejection.
+A positive-only test suite verifies the system does the right thing when conditions are right. It verifies nothing about what the system does when conditions are wrong. An AC that says "reject invalid input" with only a test for valid input passing verifies nothing about rejection.
 
 ## Violations to detect
 
@@ -21,9 +21,9 @@ A positive-only test suite proves the system does the right thing when condition
 
 ## Good practice
 
-For every AC: write the test that proves the positive case. Then write the test that proves the negative case — wrong input, missing data, expired state, unauthorized caller. Both must exist. The negative test is often the one that finds the bug.
+For every AC: write the test that verifies the positive case. Then write the test that verifies the negative case — wrong input, missing data, expired state, unauthorized caller. Both must exist. The negative test is often the one that finds the bug.
 
 ## Sources
 
 - intent-book, *"AC IDs and Coverage" chapter*, quality section.
-- intent-book, *"Tests as Proof, Not Ritual" chapter*, quality section.
+- intent-book, *"Tests as Evidence, Not Ritual" chapter*, quality section.

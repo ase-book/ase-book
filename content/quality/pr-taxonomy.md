@@ -1,6 +1,6 @@
 # PR Taxonomy
 
-A pull request is a review contract. If the contract says `behavioral` and the diff also moves files, reformats modules, and edits docs, the reviewer no longer knows which proof applies.
+A pull request is a review contract. If the contract says `behavioral` and the diff also moves files, reformats modules, and edits docs, the reviewer no longer knows which evidence applies.
 
 Intent Engineering treats PR shape as part of the intent. The spec states what should change. The PR class states how to review the change. This chapter uses both to control one failure mode: feature work bundled with nearby cleanup and treated as one finished unit.
 
@@ -14,7 +14,7 @@ Use three PR classes. Put the class in the PR title, label, or template field be
 |---|---|---|---|
 | `docs` | Specs, ADRs, READMEs, agent instructions, generated indexes | Does the written intent match the system and the decision? | Do not edit executable files. |
 | `structural` | Renames, moves, formatting, dependency-free refactors | Did behavior stay the same, and did every reference move cleanly? | Do not add runtime behavior. |
-| `behavioral` | Product code, tests, migrations, config changes tied to behavior | Does the implementation satisfy the accepted spec, with tests proving the acceptance criteria? | Do not include drive-by formatting, renames, or refactors. |
+| `behavioral` | Product code, tests, migrations, config changes tied to behavior | Does the implementation satisfy the accepted spec, with tests verifying the acceptance criteria? | Do not include drive-by formatting, renames, or refactors. |
 
 The class determines the review path. A `docs` PR gets read for accuracy and scope. A `structural` PR gets checked for completeness and behavior preservation. A `behavioral` PR gets checked against the spec, then the tests, then the diff.
 
@@ -33,7 +33,7 @@ This PR class is behavioral.
 
 Allowed:
 - Changes required by the accepted spec
-- Tests proving the acceptance criteria
+- Tests verifying the acceptance criteria
 - Documentation updates explicitly named in the spec
 
 Not allowed:
@@ -86,8 +86,8 @@ Call it bureaucracy if you like; it is also the mechanical aid that lets a revie
 
 ## The point
 
-This chapter treats the coherent-looking bundle as the failure to prevent: feature, cleanup, and opportunistic refactor in one diff. Mixed intent weakens review because the reviewer must switch proof models mid-stream. PR taxonomy makes the intended review path explicit before the agent writes code.
+This chapter treats the coherent-looking bundle as the failure to prevent: feature, cleanup, and opportunistic refactor in one diff. Mixed intent weakens review because the reviewer must switch evidence models mid-stream. PR taxonomy makes the intended review path explicit before the agent writes code.
 
-The next control raises a different question. A clean PR proves the change stayed in its lane, but lane discipline does not prove the code is well-shaped.
+The next control raises a different question. A clean PR verifies the change stayed in its lane, but lane discipline does not verify the code is well-shaped.
 
 *Sources: The mixed-intent failure mode and PR taxonomy defense are this book's synthesis.*

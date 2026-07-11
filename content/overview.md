@@ -6,17 +6,17 @@ The agent does not know your decisions. Intent Engineering gives it the decision
 flowchart LR
     classDef context fill:#64748b,stroke:#475569,color:#fff
     classDef intent fill:#0d9488,stroke:#0f766e,color:#fff
-    classDef proof fill:#0891b2,stroke:#0e7490,color:#fff
+    classDef evidence fill:#0891b2,stroke:#0e7490,color:#fff
 
     F["Foundation"]:::context
     AI["Agent Instructions"]:::context
     SD["Spec-Driven<br>Development"]:::intent
-    QV["Quality &<br>Verification"]:::proof
+    QV["Quality &<br>Verification"]:::evidence
 
     F & AI --> SD --> QV
 ```
 
-*Context comes first. Intent directs the change. Proof checks the result.*
+*Context comes first. Intent directs the change. Evidence checks the result.*
 
 ## The four practices
 
@@ -25,7 +25,7 @@ flowchart LR
 | [Foundation](/foundation/) | Decisions, design docs, specs, and an index the agent can load | The agent guesses from public patterns instead of your codebase |
 | [Agent Instructions](/agent-instructions/) | One entry point and one instruction hub for each session | Each session re-derives conventions from scratch |
 | [Spec-Driven Development](/spec-driven/) | A change-sized spec written before code and archived after merge | The change ships without a settled target |
-| [Quality & Verification](/quality/) | Tests that trace back to acceptance criteria in the spec | The target exists, but nothing proves the change hit it |
+| [Quality & Verification](/quality/) | Tests that trace back to acceptance criteria in the spec | The target exists, but nothing verifies the change hit it |
 
 [Team Workflows](/team/) covers how the same practices hold up across a team.
 

@@ -21,7 +21,7 @@ Deferring structural cleanup creates a growing mass of code shaped for the first
 
 ## Good practice
 
-The merge boundary is the right moment for structural adjustment because: the implementation is fresh in the developer's mind, the tests are already proving the behavior, and the next developer hasn't started yet. The cost of refactoring at merge is minutes; the cost of refactoring later is hours.
+The merge boundary is the right moment for structural adjustment because: the implementation is fresh in the developer's mind, the tests are already verifying the behavior, and the next developer hasn't started yet. The cost of refactoring at merge is minutes; the cost of refactoring later is hours.
 
 ## Sources
 

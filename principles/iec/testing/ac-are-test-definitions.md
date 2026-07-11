@@ -3,15 +3,15 @@
 **Layer**: 1
 **Categories**: testing, ac-ids, specs
 **Applies-to**: code
-**Summary**: Every acceptance criterion is a test definition waiting to be executed — it needs a stable ID and a proof layer.
+**Summary**: Every acceptance criterion is a test definition waiting to be executed — it needs a stable ID and an evidence layer.
 
 ## Principle
 
-Acceptance criteria are test definitions waiting to be executed. Every scenario needs a stable ID in bracket format (`[GV-007]`) with a 2–4 letter component prefix, a declared test type (`Test-type: unit | integration | acceptance`), and at least one positive and one negative test. Happy-path-only coverage is not proof.
+Acceptance criteria are test definitions waiting to be executed. Every scenario needs a stable ID in bracket format (`[GV-007]`) with a 2–4 letter component prefix, a declared test type (`Test-type: unit | integration | acceptance`), and at least one positive and one negative test. Happy-path-only coverage is not evidence.
 
 ## Why it matters
 
-An AC without an ID is untraceable. An AC without a test type is ambiguously tested. An AC with only happy-path tests proves the easy case and leaves the error case unverified. The three attributes — ID, type, and positive+negative coverage — together make an AC a verifiable claim rather than a prose description.
+An AC without an ID is untraceable. An AC without a test type is ambiguously tested. An AC with only happy-path tests verifies the easy case and leaves the error case unverified. The three attributes — ID, type, and positive+negative coverage — together make an AC a verifiable claim rather than a prose description.
 
 ## Violations to detect
 

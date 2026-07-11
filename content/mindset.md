@@ -72,4 +72,4 @@ The agent writes the code. The developer owns the architecture, the design, and 
 
 The term this book uses, Intent Engineering, covers a narrower practice: making decisions, docs, specs, checks, and reviews available to the agent as input.
 
-Spec-driven development is one engine for this work, but not the whole discipline. OpenSpec is the workflow this book uses because it gives the agent a concrete change folder with `proposal.md`, `tasks.md`, and delta specs under `specs/`, plus an explicit lifecycle and proof tied to those files. The rest of the book is about where those inputs live, how they stay current, and which of them the agent should load first.
+Spec-driven development is one engine for this work, but not the whole discipline. OpenSpec is the workflow this book uses because it gives the agent a concrete change folder with `proposal.md`, `tasks.md`, and delta specs under `specs/`, plus an explicit lifecycle and evidence tied to those files. The rest of the book is about where those inputs live, how they stay current, and which of them the agent should load first.

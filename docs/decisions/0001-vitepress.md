@@ -56,7 +56,7 @@ Chosen option: "VitePress", because it delivers Mermaid support out of the box v
 ### mdBook
 
 * Good, because lightweight, single binary (Rust), minimal setup
-* Good, because the Rust Book uses it — proven for long-form technical writing
+* Good, because the Rust Book uses it — battle-tested for long-form technical writing
 * Bad, because Mermaid support is via third-party preprocessor — less integrated than VitePress plugin
 * Bad, because plugin ecosystem is limited; adding features (search, theming) requires more custom work
 * Bad, because smaller community relative to the JavaScript SSG ecosystem this audience lives in

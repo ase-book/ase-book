@@ -27,7 +27,7 @@ If brownfield: harvest structure, dependencies, key decisions, design constraint
 
 Optional, maturity-dependent:
 
-- [ ] `.agents/hooks/` experiments only once the team is ready. Treat hooks as experiments rather than a required part of the hub unless your team has already proved them in its workflow. See [the instruction hub chapter](/agent-instructions/instruction-hub).
+- [ ] `.agents/hooks/` experiments only once the team is ready. Treat hooks as experiments rather than a required part of the hub unless your team has already verified them in its workflow. See [the instruction hub chapter](/agent-instructions/instruction-hub).
 
 ## Spec-Driven Development
 

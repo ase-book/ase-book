@@ -34,7 +34,7 @@ features:
     details: Change-sized specs before code, with OpenSpec as the working example. Developers state intent before agents implement.
     link: /spec-driven/
   - title: Quality and Verification
-    details: Tests as proof of intent. Stable AC IDs, coverage pairs, PR taxonomy, and checks that keep human intent and generated code aligned.
+    details: Tests as evidence of intent. Stable AC IDs, coverage pairs, PR taxonomy, and checks that keep human intent and generated code aligned.
     link: /quality/
   - title: Team Workflows
     details: Adoption, trunk-based development with agents, cross-team coordination, and a time-bounded account of what is still unsettled.

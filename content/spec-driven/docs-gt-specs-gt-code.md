@@ -16,7 +16,7 @@ In the 2025-2026 SDD material this chapter cites, code is increasingly treated a
 
 Generated artifacts already have a familiar dependency rule. The compiled binary is downstream of the source code, the minified bundle is downstream of the modules, and the Docker image is downstream of the Dockerfile. Nobody treats the binary as the source of truth.
 
-In agent-driven work, code starts to occupy the position the compiled binary used to. The authored intent above it lives in two places. The design, the decisions, and the reasons one option won over another live in docs. The testable behavior, the acceptance criteria, and the proof belong to the spec.
+In agent-driven work, code starts to occupy the position the compiled binary used to. The authored intent above it lives in two places. The design, the decisions, and the reasons one option won over another live in docs. The testable behavior, the acceptance criteria, and the evidence belong to the spec.
 
 This is why the chain runs in one direction. Docs shape the spec. The spec drives the code. Code is the artifact you are most willing to throw away.
 
@@ -28,7 +28,7 @@ graph TD
     classDef oneoff fill: #0891b2, stroke: #0e7490, color: #fff
     classDef output fill: #64748b, stroke: #475569, color: #fff
     D["Docs · durable<br>the why, the design"]:::durable
-    S["Spec · one-off<br>the proof, the ACs"]:::oneoff
+    S["Spec · one-off<br>the evidence, the ACs"]:::oneoff
     C["Code · disposable<br>regenerated output"]:::output
 
     D -->|shapes|S
@@ -47,7 +47,7 @@ The mantra is that code is self-documenting. It is not. Code tells you what it d
 
 For bounded 2025-2026 agent-assisted changes, code modification is cheaper than it used to be. A small service, handler, or UI flow might fit in one agent session. Code that is inexpensive to replace should not outrank the documents that make replacement repeatable.
 
-Farley's "Modern Software Engineering" argues for feedback loops and reliable delivery of intent into production. In this workflow, docs record the design decisions and the spec turns them into proof obligations.
+Farley's "Modern Software Engineering" argues for feedback loops and reliable delivery of intent into production. In this workflow, docs record the design decisions and the spec turns them into evidence obligations.
 
 *Sources: Dave Farley, "Modern Software Engineering" (Addison-Wesley, 2021), feedback loops and reliable delivery of intent into production; Augment Code, "The Spec as Source of Truth" (April 9, 2026, updated June 18, 2026), vendor-authored rebuild-test framing for bounded regeneration claims.*
 
@@ -95,6 +95,6 @@ The code runs. The docs do not. Both statements are true. The code shows what th
 
 Stop treating code review as the only primary quality gate. In this workflow, spec review happens before or alongside code review. Read the spec for correctness before the diff for conformance.
 
-This claim only holds if the spec is tied to something harder than intent: executable proof that the implementation delivers it. Intent without proof is still a document.
+This claim only holds if the spec is tied to something harder than intent: executable evidence that the implementation delivers it. Intent without evidence is still a document.
 
 *Sources: "Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants" (OpenReview, January 30, 2026, modified April 2, 2026), SDD workflow checkpoints and spec-code alignment through tests; Dave Farley, "Modern Software Engineering" (Addison-Wesley, 2021), feedback loops and automated verification.*

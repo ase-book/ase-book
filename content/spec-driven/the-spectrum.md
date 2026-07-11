@@ -99,4 +99,4 @@ Teams underestimate the theater risk. A heavy framework adopted by a small team 
 
 The right level of formality is the one your team will maintain under deadline pressure. Start lower than you think you need. Add ceremony when you feel the pain of not having it.
 
-Picking the rung is the easy part. The lifecycle that carries a spec from proposal to archive, and back into the codebase as proof, is where most of the work hides.
+Picking the rung is the easy part. The lifecycle that carries a spec from proposal to archive, and back into the codebase as evidence, is where most of the work hides.

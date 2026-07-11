@@ -30,7 +30,7 @@ This is cognitive debt in its narrowest form: one stale document feeding directl
 
 The verification move is familiar by now. Do not match text. Match identity.
 
-[AC IDs and Coverage](./ac-ids-coverage) made tests durable by linking each acceptance scenario to a stable Acceptance Criterion ID (AC ID). The scenario text gets rewritten, and the test moves files, but the ID remains stable, so the link between intent and proof remains intact.
+[AC IDs and Coverage](./ac-ids-coverage) made tests durable by linking each acceptance scenario to a stable Acceptance Criterion ID (AC ID). The scenario text gets rewritten, and the test moves files, but the ID remains stable, so the link between intent and evidence remains intact.
 
 Documentation needs a lighter version of the same move. Each important document carries a small frontmatter block naming the code paths the check watches, the date somebody last checked it against those paths, and any outside systems still pointing at it:
 
@@ -128,7 +128,7 @@ void runbookExplainsWhereToFindFailureLogs() {
 
 The same pattern works for a release runbook that must name the rollback command, the artifact location, and the first log command. Test those three facts directly. If one disappears in an edit, the suite fails before the next release leaves someone guessing in a live incident.
 
-This is weaker than a behavior test. The test does not prove the command still works. It proves the document still names the command. For operational prose, that already moves far beyond silence.
+This is weaker than a behavior test. The test does not verify the command still works. It verifies the document still names the command. For operational prose, that already moves far beyond silence.
 
 Testing runbook content like this is a narrow extension this book recommends. It is not presented here as common industry policy.
 
@@ -158,13 +158,13 @@ Verification closes the code gap with tests. A documentation drift check closes 
 - run a deterministic check against the link
 - expose failure where the team already pays attention, in CI
 
-The check does less than a test. A test proves behavior. A documentation drift check only proves nobody reviewed the prose after the source moved, or that an outside record still depends on the file staying put. That weaker claim still earns its keep because the default is silence.
+The check does less than a test. A test verifies behavior. A documentation drift check only verifies nobody reviewed the prose after the source moved, or that an outside record still depends on the file staying put. That weaker claim still earns its keep because the default is silence.
 
 ## Limits worth naming
 
 The signal is blunt. A commit touching a tracked directory marks the document stale even when the change was a rename, a comment edit, or an internal helper the document never mentioned.
 
-The dates are bookkeeping markers, not proof of careful reading. Bumping `content-verified-at` or `referrers-verified-at` silences the warning.
+The dates are bookkeeping markers, not evidence of careful reading. Bumping `content-verified-at` or `referrers-verified-at` silences the warning.
 
 Cross-cutting documents are awkward. A design note covering four subsystems and two team boundaries has no tidy sibling path list. Those documents need manual `tracked-paths` entries, and many teams will defer the work.
 

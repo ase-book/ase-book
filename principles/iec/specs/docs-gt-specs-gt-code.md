@@ -7,7 +7,7 @@
 
 ## Principle
 
-Documentation is the durable source of truth. Architecture, decisions (ADRs), and design live in `docs/` and outlive any single change. A spec is not design: it is the testable acceptance criteria that guard a change and prove its behavior, archived as the canonical criteria per capability. Code is the output, downstream of both, and regenerable from them. The chain runs docs, then spec, then code. During a change, when the spec and the code disagree, the spec is canonical for behavior; when the design is wrong, the fix is upstream in the docs. Agents regenerate code from intent. They do not reliably regenerate intent from code.
+Documentation is the durable source of truth. Architecture, decisions (ADRs), and design live in `docs/` and outlive any single change. A spec is not design: it is the testable acceptance criteria that guard a change and verify its behavior, archived as the canonical criteria per capability. Code is the output, downstream of both, and regenerable from them. The chain runs docs, then spec, then code. During a change, when the spec and the code disagree, the spec is canonical for behavior; when the design is wrong, the fix is upstream in the docs. Agents regenerate code from intent. They do not reliably regenerate intent from code.
 
 ## Why it matters
 
@@ -23,7 +23,7 @@ If code is the canonical artifact, every regeneration is a rewrite with no ancho
 
 ## Good practice
 
-Decisions and design go in ADRs and design docs under `docs/`. A spec earns its role by being testable, AC-tagged, sized to be readable, and scoped to one change. If the spec cannot generate a test suite that proves the implementation, it is not doing its job. Review intent before diff: the docs and the spec first, then the code.
+Decisions and design go in ADRs and design docs under `docs/`. A spec earns its role by being testable, AC-tagged, sized to be readable, and scoped to one change. If the spec cannot generate a test suite that verifies the implementation, it is not doing its job. Review intent before diff: the docs and the spec first, then the code.
 
 ## Sources
 

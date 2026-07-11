@@ -72,7 +72,7 @@ content/
 ├── foundation/         # Why structure, document types, plain-text-as-code
 ├── agent-instructions/    # AGENTS.md, .agents/ hub, skills, context
 ├── spec-driven/        # Why specs, lifecycle, Docs > Specs > Code
-├── quality/            # Tests as proof, AC IDs, PR taxonomy
+├── quality/            # Tests as evidence, AC IDs, PR taxonomy
 ├── team-workflows/     # OpenSpec in an SDLC, TBD with agents
 ├── cross-team/         # ADRs, inner source, what's still evolving
 └── appendices/         # Tooling, checklist, principles

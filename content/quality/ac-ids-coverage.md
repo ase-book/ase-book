@@ -99,29 +99,29 @@ A registry that only reports percentages is a dashboard. A reviewer cannot act o
 
 This book uses three states:
 
-- `covered`: tagged proof exists at the declared boundary
-- `partial`: some proof exists, but one observable part is still missing
-- `gap`: no proof linked to the acceptance criterion
+- `covered`: tagged evidence exists at the declared boundary
+- `partial`: some evidence exists, but one observable part is still missing
+- `gap`: no evidence linked to the acceptance criterion
 
 One small table is enough:
 
 | AC ID | Status | Why |
 |---|---|---|
-| `AUTH-014` | `covered` | tagged proof exists |
+| `AUTH-014` | `covered` | tagged evidence exists |
 | `AUTH-015` | `partial` | positive path covered, boundary case missing |
-| `AUTH-016` | `gap` | no tagged proof |
+| `AUTH-016` | `gap` | no tagged evidence |
 
-The `partial` state matters because real suites often land there. A team wrote the 403-path test. The session-expired redirect is still untested. Marking that row `covered` lies; marking it `gap` throws away the proof already written. `partial` keeps the missing edge visible without pretending the whole scenario is open.
+The `partial` state matters because real suites often land there. A team wrote the 403-path test. The session-expired redirect is still untested. Marking that row `covered` lies; marking it `gap` throws away the evidence already written. `partial` keeps the missing edge visible without pretending the whole scenario is open.
 
 The row itself should carry the next task. For `AUTH-015`, the note might read: `403 path covered; expired-session redirect still untested`. The next test is then clear from the registry entry alone, no detective work needed.
 
-This registry-as-work-queue pattern is this book's convention. OpenSpec does not require it. The point is not the exact file shape. The point is that missing proof should sit in the same place as the IDs it is missing from.
+This registry-as-work-queue pattern is this book's convention. OpenSpec does not require it. The point is not the exact file shape. The point is that missing evidence should sit in the same place as the IDs it is missing from.
 
 *Sources: intent-engineering-for-coding-agents/cli (ongoing), AC registry examples and checker workflow. The `covered` / `partial` / `gap` work-queue pattern in this section is this book's synthesis built on top of AC traceability.*
 
 ## Enforcing the pairs
 
-[Tests as Proof, Not Ritual](./tests-as-proof) made the case that proving an acceptance criterion takes more than the happy path: the positive path, each way the criterion is violated, and any boundary it implies. AC IDs turn that principle into something a tool enforces. Because every scenario carries an ID and every test wears it, a check counts what proves each criterion and fails when a direction is missing.
+[Tests as Evidence, Not Ritual](./tests-as-evidence) made the case that verifying an acceptance criterion takes more than the happy path: the positive path, each way the criterion is violated, and any boundary it implies. AC IDs turn that principle into something a tool enforces. Because every scenario carries an ID and every test wears it, a check counts the evidence for each criterion and fails when a direction is missing.
 
 The check is deterministic: scan the spec, identify scenarios, count positive and negative tests per scenario, fail when a positive-direction scenario has no negative pair (or vice versa), unless the scenario has only one direction to verify. "When the user submits an empty form, the API returns a 400" is itself a negative-direction scenario. Its positive counterpart ("a valid form returns a 201") is a separate scenario with its own ID. This is coverage of acceptance criteria, not the percentage of code lines a test run executes. It measures the shape of the suite, not the quality of any one test.
 
@@ -157,7 +157,7 @@ Test-type: Integration
 **Then** the response is 410 with `{ error: 'gone' }`
 ```
 
-Three scenarios, three IDs, three `Test-type:` fields. `USR` is the prefix because this feature is about users, readable at a glance. The test type is `Integration` because these scenarios exercise a real HTTP layer against a real database. A unit test with a mocked repository would not prove the HTTP status codes or the ORM query. USR-008 is the positive case, while USR-009 and USR-010 are negative cases. The AC-coverage check sees the pair. The traceability scanner greps for `USR-009` in the test suite and finds the tagged test.
+Three scenarios, three IDs, three `Test-type:` fields. `USR` is the prefix because this feature is about users, readable at a glance. The test type is `Integration` because these scenarios exercise a real HTTP layer against a real database. A unit test with a mocked repository would not verify the HTTP status codes or the ORM query. USR-008 is the positive case, while USR-009 and USR-010 are negative cases. The AC-coverage check sees the pair. The traceability scanner greps for `USR-009` in the test suite and finds the tagged test.
 
 What is unusual here is not the structure. Acceptance scenarios in this form predate Intent Engineering by twenty years. What is unusual is the strictness. The ID is in the scenario heading and tagged on the test, and both are checked by a tool. The strictness keeps the link intact in an agentic codebase, where everything changes faster than anyone tracks by hand.
 
@@ -169,11 +169,11 @@ A generated scenario should therefore be treated as a draft, not a verdict. When
 
 The bracket format is a convention, not a law. `[PROJECT-NNN]`, `[FEAT-NNN]`, and `SCAFFOLD-001` all work. What matters is that a repo picks one shape, holds to it, and never lets two scenarios share an ID. Stability and the gaps left by withdrawn scenarios are the registry's concern, settled above.
 
-Tests that prove the wrong thing still pass. An AC ID linking to a test that asserts a different behavior than the scenario specifies looks fine to the traceability check and fails the underlying purpose. The check verifies the link exists, not whether the test asserts what the scenario describes.
+Tests that verify the wrong thing still pass. An AC ID linking to a test that asserts a different behavior than the scenario specifies looks fine to the traceability check and fails the underlying purpose. The check verifies the link exists, not whether the test asserts what the scenario describes.
 
 That second judgment is not out of reach, though: line up the scenario's `Given/When/Then` against the test's setup, action, and assertions, and a mismatch shows. A human reviewer makes that call, and so does an agent handed both artifacts and asked whether they agree. That comparison is what the next chapter on lifecycle checkpoints is built around.
 
-Refactoring spec scenarios is the failure mode to watch for. A scenario being rewritten to clarify its intent is fine. The ID stays, the wording changes, and the test still proves the new wording because the new wording describes the same behavior. A scenario being rewritten to specify a different behavior, while keeping the ID, is silent drift. The fix is to retire the old ID and assign a new one. Same discipline as ADRs: when the decision changes, the new artifact gets a new identifier.
+Refactoring spec scenarios is the failure mode to watch for. A scenario being rewritten to clarify its intent is fine. The ID stays, the wording changes, and the test still verifies the new wording because the new wording describes the same behavior. A scenario being rewritten to specify a different behavior, while keeping the ID, is silent drift. The fix is to retire the old ID and assign a new one. Same discipline as ADRs: when the decision changes, the new artifact gets a new identifier.
 
 *Sources: intent-engineering-for-coding-agents/cli `docs/decisions/0007-ac-id-and-test-type-convention.md` (ongoing), stable IDs, non-reuse, and traceability rules. Michael Nygard, "Documenting Architecture Decisions" (2011), new identifiers for changed decisions as the ADR analogy used here.*
 

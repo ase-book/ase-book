@@ -17,7 +17,7 @@ graph LR
     end
 
     subgraph OS[OpenSpec · for the agent]
-        CF["Change folder<br/>what is built + proof"]:::openspec
+        CF["Change folder<br/>what is built + evidence"]:::openspec
         AC["Delta spec + acceptance criteria"]:::openspec
         TK["tasks.md"]:::openspec
         ADR["ADR"]:::openspec

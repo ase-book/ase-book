@@ -4,7 +4,7 @@ Sorted alphabetically. Each entry expands the term and gives the definition this
 
 ## AC ID (Acceptance Criterion ID)
 
-A stable, bracketed identifier (format `[PREFIX-NNN]`, e.g. `[GV-001]`, `[AUTH-014]`) attached to each acceptance scenario in a spec. Prefix is 2-4 letters from the component abbreviation so the component is immediately recognizable. Numbers are monotone: deleted IDs leave a permanent gap and are never reused. Tests carry the ID as a framework tag (e.g. JUnit `@Tag("GV-001")`), producing traceability from spec to proof. This is an Intent Engineering convention layered on top of OpenSpec. OpenSpec itself prescribes no ID format. See [AC IDs and Coverage](/quality/ac-ids-coverage).
+A stable, bracketed identifier (format `[PREFIX-NNN]`, e.g. `[GV-001]`, `[AUTH-014]`) attached to each acceptance scenario in a spec. Prefix is 2-4 letters from the component abbreviation so the component is immediately recognizable. Numbers are monotone: deleted IDs leave a permanent gap and are never reused. Tests carry the ID as a framework tag (e.g. JUnit `@Tag("GV-001")`), producing traceability from spec to evidence. This is an Intent Engineering convention layered on top of OpenSpec. OpenSpec itself prescribes no ID format. See [AC IDs and Coverage](/quality/ac-ids-coverage).
 
 ## AC registry
 
@@ -76,7 +76,7 @@ The agentic-era analogue to technical debt: undocumented decisions and assumptio
 
 ## Context engineering
 
-The practice of deliberately controlling what enters a model's context window: instructions, retrieved files, tool definitions, conversation history, and other task-relevant information. In this book, context engineering covers part of the Foundation and Agent Instructions work, but not the full Intent Engineering chain of specs, proof, review, and durable decisions. See [The Human-Agent Engineering Mindset](/mindset).
+The practice of deliberately controlling what enters a model's context window: instructions, retrieved files, tool definitions, conversation history, and other task-relevant information. In this book, context engineering covers part of the Foundation and Agent Instructions work, but not the full Intent Engineering chain of specs, evidence, review, and durable decisions. See [The Human-Agent Engineering Mindset](/mindset).
 
 ## Context poisoning
 
@@ -130,7 +130,7 @@ What a developer encodes for a coding agent to act on. In this book, intent take
 
 ## Intent Engineering
 
-The practice this book teaches. Within agentic software engineering, intent engineering is the discipline of directing coding agents by engineering well-structured intent rather than writing code directly. Context (Foundation, Agent Instructions) is the substrate that makes intent executable. Specs state the target. Verification proves the result. See [Introduction](/introduction).
+The practice this book teaches. Within agentic software engineering, intent engineering is the discipline of directing coding agents by engineering well-structured intent rather than writing code directly. Context (Foundation, Agent Instructions) is the substrate that makes intent executable. Specs state the target. Verification verifies the result. See [Introduction](/introduction).
 
 ## LeanSpec
 
@@ -160,7 +160,7 @@ The agent-tool bridge protocol documented at modelcontextprotocol.io. In this bo
 
 ## Mutation testing
 
-A technique that introduces small, semantics-changing edits (mutations) into the code under test and re-runs the test suite. A mutation that stays green indicates a gap: the suite did not detect a wrong implementation. The kill rate is a feedback control on whether tests are proof or decoration. See [Tests as Proof, Not Ritual](/quality/tests-as-proof).
+A technique that introduces small, semantics-changing edits (mutations) into the code under test and re-runs the test suite. A mutation that stays green indicates a gap: the suite did not detect a wrong implementation. The kill rate is a feedback control on whether tests are evidence or decoration. See [Tests as Evidence, Not Ritual](/quality/tests-as-evidence).
 
 ## OWASP (Open Worldwide Application Security Project)
 
@@ -192,11 +192,11 @@ In this book's sense: the canonical specification of system behavior. Acceptance
 
 ## SDD (Spec-Driven Development)
 
-The practice of writing intent as structured, acceptance-criterion-tagged specifications before implementation. Specs are scoped to one change, archived after merge, and serve as the canonical acceptance criteria from which code is generated and against which it is proven. The durable source of truth for design is `docs/`, not the spec. One of the four topics in Intent Engineering. See [Spec-Driven Development](/spec-driven/).
+The practice of writing intent as structured, acceptance-criterion-tagged specifications before implementation. Specs are scoped to one change, archived after merge, and serve as the canonical acceptance criteria from which code is generated and checked. The durable source of truth for design is `docs/`, not the spec. One of the four topics in Intent Engineering. See [Spec-Driven Development](/spec-driven/).
 
 ## Test-type field
 
-A `Test-type:` line placed in a spec scenario before the WHEN/THEN block, naming the category of test that proves the scenario (e.g. `unit`, `integration`, `e2e`). Captures the intended test level at spec-authoring time so the agent generates the right kind of test. Resolved against the project's test strategy document at implementation time. See [AC IDs and Coverage](/quality/ac-ids-coverage).
+A `Test-type:` line placed in a spec scenario before the WHEN/THEN block, naming the category of test that verifies the scenario (e.g. `unit`, `integration`, `e2e`). Captures the intended test level at spec-authoring time so the agent generates the right kind of test. Resolved against the project's test strategy document at implementation time. See [AC IDs and Coverage](/quality/ac-ids-coverage).
 
 ## `tasks.md`
 
@@ -216,6 +216,6 @@ The table-of-contents approach to writing `AGENTS.md`: a short file at the repo 
 
 ## Walking skeleton
 
-A thin end-to-end implementation built forward to prove an architecture works. From Alistair Cockburn's "Crystal Clear" (2004). Etymological ancestor of the agentic-era `skeleton.md`, which reverses the direction by extracting the skeleton from existing code rather than building one forward.
+A thin end-to-end implementation built forward to verify an architecture works. From Alistair Cockburn's "Crystal Clear" (2004). Etymological ancestor of the agentic-era `skeleton.md`, which reverses the direction by extracting the skeleton from existing code rather than building one forward.
 
 *Sources: Alistair Cockburn, "Crystal Clear" (2004), origin of the walking-skeleton pattern. The `skeleton.md` reversal described here is this book's synthesis.*

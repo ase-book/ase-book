@@ -1,6 +1,6 @@
 # Introduction
 
-The mindset alone does not give an agent enough to work from. A maintained codebase still needs explicit context, per-change intent, and proof that the result matched the target.
+The mindset alone does not give an agent enough to work from. A maintained codebase still needs explicit context, per-change intent, and evidence that the result matched the target.
 
 Coding agents work quickly, but speed cuts both ways. They can draft a service in minutes and drift from a design decision on the same clock. The missing variable is not intelligence. It is project-specific information.
 
@@ -16,7 +16,7 @@ This book calls the missing discipline Intent Engineering: giving the agent enou
 
 Intent, as this book uses the word, is what you want the agent to build or decide, stated with enough precision that it acts on your purpose instead of its own inference. It has two forms. One is change-sized: a spec for the next change. The other is durable: decisions and conventions that constrain every change after that.
 
-The phrase "intent engineering" did not start here. `intentengineering.dev` uses it for a neighboring practice: defining objectives, success criteria, constraints, and stop rules so AI agents deliver business outcomes. Related terms are moving through 2025-2026 writing too, especially Intent-Driven Development. This book uses a narrower frame: durable repo context, spec-first change control, and executable proof for agent-generated code.
+The phrase "intent engineering" did not start here. `intentengineering.dev` uses it for a neighboring practice: defining objectives, success criteria, constraints, and stop rules so AI agents deliver business outcomes. Related terms are moving through 2025-2026 writing too, especially Intent-Driven Development. This book uses a narrower frame: durable repo context, spec-first change control, and executable evidence for agent-generated code.
 
 *Sources: intentengineering.dev (ongoing), prior use of "intent engineering" in an agent-alignment sense. Don Johnson, "Intent-Driven Development: Define the System Before You Write the Code" (DEV, December 4, 2025), intent-driven development as specification-first software design. Vishal Mysore, "What is Intent Driven Development?" (Medium, March 9, 2026), intent-driven development as outcome-and-constraint framing for AI-assisted execution. intent-driven-development.com (ongoing), intent-above-implementation framing in current workflow language.*
 
@@ -26,7 +26,7 @@ The book is OpenSpec-first on purpose. Intent Engineering is the portable practi
 
 ## What to expect
 
-The book is organized around four topics. The first two give the agent durable context. The last two pin a specific change and prove the generated code met the target.
+The book is organized around four topics. The first two give the agent durable context. The last two pin a specific change and verify the generated code met the target.
 
 **Foundation:** repo structure as the agent's context. Decisions, design docs, specs, and an agent-facing index live in plain text, in version control, where the next session can load them.
 
@@ -34,13 +34,13 @@ The book is organized around four topics. The first two give the agent durable c
 
 **Spec-Driven Development:** specs before code. The spec defines one change, limits the solution space, and gives the change a target richer than "do what the codebase seems to imply".
 
-**Quality and Verification:** tests as proof of intent. Acceptance criteria trace to tests, reviewer scope stays narrow, and drift has a better chance of getting caught before merge.
+**Quality and Verification:** tests as evidence of intent. Acceptance criteria trace to tests, reviewer scope stays narrow, and drift has a better chance of getting caught before merge.
 
-Topics three and four are a pair. Spec-driven development became more visible in 2025-2026 tooling and discussion, though the practice is still young and unevenly defined, and much of the public material stops at writing the spec. This book keeps the spec, then adds the missing half: proving the generated code landed where the spec aimed it.
+Topics three and four are a pair. Spec-driven development became more visible in 2025-2026 tooling and discussion, though the practice is still young and unevenly defined, and much of the public material stops at writing the spec. This book keeps the spec, then adds the missing half: verifying the generated code landed where the spec aimed it.
 
 *Sources: "Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants" (submitted to AIware 2026, OpenReview, January 2026). SolGuruz, "Spec-Driven Development Guide" (2026), public SDD framing in current tooling discourse. IntuitionLabs, "Spec-Driven Development and Spec-Kit" (2026), current SDD framing and limits.*
 
-After those four topics come team workflows, cross-team coordination, and the parts of this field that are still unsettled. This book does not add a second project-management layer. The existing flow stays. Tickets point to change folders. PRs carry spec deltas. CI checks proof, not only style.
+After those four topics come team workflows, cross-team coordination, and the parts of this field that are still unsettled. This book does not add a second project-management layer. The existing flow stays. Tickets point to change folders. PRs carry spec deltas. CI checks evidence, not only style.
 
 If that already sounds like waterfall, [Why Specs?](./spec-driven/why-specs#the-waterfall-objection) takes the objection where the practice is introduced, not here.
 
@@ -68,4 +68,4 @@ Intent Engineering does not stop drift. It gives you a clearer way to detect dri
 
 Nor does it try to make the agent deterministic. You are engineering the ground it reasons from: a better picture of your system instead of a guess. The limits of that bargain matter, and [When Intent Engineering Fails](./foundation/when-intent-engineering-fails) takes them up early, before any of the practices are sold as a cure.
 
-The next question is structural: where do those decisions, constraints, and proofs live so the agent loads them in the first place? Start with [Foundation](./foundation/index.md).
+The next question is structural: where do those decisions, constraints, and evidence live so the agent loads them in the first place? Start with [Foundation](./foundation/index.md).

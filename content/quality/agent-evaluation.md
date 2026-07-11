@@ -4,7 +4,7 @@ Your agent instructions, skills, and hooks are code. Nobody tests them. They dri
 
 In the companion repo's `examples/eval-demo`, one line added to `AGENTS.md` ("Prefer functions over classes for utility code") pushed the agent away from the project's conventions. The baseline output scores 9/9. The drifted output scores 5/9.
 
-Tests prove the code is right. They say nothing about whether the agent setup is right. That second check is the one most teams miss.
+Tests verify the code is right. They say nothing about whether the agent setup is right. That second check is the one most teams miss.
 
 *Sources: intent-engineering-for-coding-agents/cli `examples/eval-demo/README.md` (ongoing), the one-line `AGENTS.md` change and the drift symptoms described. intent-engineering-for-coding-agents/cli `examples/eval-demo/score-baseline.txt` and `examples/eval-demo/score-after-drift.txt` (ongoing), the 9/9 and 5/9 demo scores.*
 
@@ -12,7 +12,7 @@ Tests prove the code is right. They say nothing about whether the agent setup is
 
 The tests in the previous chapter close the gap between spec and implementation. A failing test says the code does not match the intent. Both sides of that comparison are concrete: the spec is a document, the test is executable, the implementation is the artifact under scrutiny.
 
-The agent setup has no built-in equivalent. `AGENTS.md`, the instruction files, the skill library, and the hook configuration are inputs to the agent, not outputs. Their effect shows up only in the code the agent produces, one PR at a time. A change that makes the agent worse can sit in the codebase for weeks before anyone notices. A change that makes it slightly better is hard to prove without a fixed task.
+The agent setup has no built-in equivalent. `AGENTS.md`, the instruction files, the skill library, and the hook configuration are inputs to the agent, not outputs. Their effect shows up only in the code the agent produces, one PR at a time. A change that makes the agent worse can sit in the codebase for weeks before anyone notices. A change that makes it slightly better is hard to verify without a fixed task.
 
 This is the open gap, and nothing in the toolchain closes it for you.
 
@@ -106,4 +106,4 @@ Those two scores are committed snapshots from one run of this example, not a ben
 
 *Sources: intent-engineering-for-coding-agents/cli (ongoing), `examples/eval-demo` and its `iec eval` invocation.*
 
-The eval suite tells you when the agent setup regresses. It says nothing about whether the link between the spec and the proof has held: whether the test that still passes is still the test that proves the acceptance criterion the spec named. That is a different kind of rot, and it needs its own check.
+The eval suite tells you when the agent setup regresses. It says nothing about whether the link between the spec and the evidence has held: whether the test that still passes is still the test that verifies the acceptance criterion the spec named. That is a different kind of rot, and it needs its own check.

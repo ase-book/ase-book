@@ -3,11 +3,11 @@
 **Layer**: 1
 **Categories**: quality, evaluation, agent
 **Applies-to**: all
-**Summary**: Tests prove the code is right; agent evaluation proves the agent setup is right — two distinct loops.
+**Summary**: Tests verify the code is right; agent evaluation verifies the agent setup is right — two distinct loops.
 
 ## Principle
 
-Tests prove the code is right. They say nothing about whether the agent setup is right. That second loop — agent evaluation and regression detection — is the missing one in most teams. It answers: did this change to `AGENTS.md` make the agent better or worse, measured how?
+Tests verify the code is right. They say nothing about whether the agent setup is right. That second loop — agent evaluation and regression detection — is the missing one in most teams. It answers: did this change to `AGENTS.md` make the agent better or worse, measured how?
 
 ## Why it matters
 

@@ -1,7 +1,7 @@
 # IEC-TESTING-EVERY-PATH: Every Path Needs a Test
 
 **Layer**: 1
-**Categories**: testing, coverage, proof
+**Categories**: testing, coverage, evidence
 **Applies-to**: code
 **Summary**: Every conditional branch, distinct return type, and exception path needs at least one test.
 
@@ -11,7 +11,7 @@ Every conditional branch is a path. Every distinct return type is a path. Every 
 
 ## Why it matters
 
-A function with five conditional branches and one test only proves behavior for the exact conditions of that test. The other four branches can be broken silently. The agent that writes only happy-path tests creates a test suite that proves the easy case and leaves the hard cases unverified.
+A function with five conditional branches and one test only verifies behavior for the exact conditions of that test. The other four branches can be broken silently. The agent that writes only happy-path tests creates a test suite that verifies the easy case and leaves the hard cases unverified.
 
 ## Violations to detect
 
@@ -26,5 +26,5 @@ For each function, enumerate the paths: each `if`/`else` branch, each `when` cla
 
 ## Sources
 
-- intent-book, *"Tests as Proof, Not Ritual" chapter*, quality section.
+- intent-book, *"Tests as Evidence, Not Ritual" chapter*, quality section.
 - intent-book, *"Test Strategy and Convention" chapter*, quality section.

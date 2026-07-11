@@ -38,7 +38,7 @@ This book does not review or rank agents. The agent is the worker. The load-bear
 Context is most of the game. Do not cram a project into one prompt. Keep the decisions in plain-text documents and diagrams the agent can load again next month. Without that, every session re-creates the same conventions, reopens settled decisions, and ships code that breaks the constraints nobody wrote down.
 
 ## From Vibe to Pro
-This is the part the carousels leave out. Give the agent the current repo facts, the active constraints, and the acceptance criteria, and the work moves from rough prototype to production software. The hard part is not the code. The hard part is choosing the limits and proving the result stayed inside them.
+This is the part the carousels leave out. Give the agent the current repo facts, the active constraints, and the acceptance criteria, and the work moves from rough prototype to production software. The hard part is not the code. The hard part is choosing the limits and verifying the result stayed inside them.
 
 Software development still needs judgment. I expect better models and more automation, and I will update this preface as that line moves. In 2026 the job still belongs to developers and reviewers: choose the scope, set the constraints, and reject code that misses both.
 

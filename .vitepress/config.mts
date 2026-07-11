@@ -106,7 +106,7 @@ export default withMermaid(
           text: 'Quality and Verification',
           items: [
             { text: 'Overview', link: '/quality/' },
-            { text: 'Tests as Proof, Not Ritual', link: '/quality/tests-as-proof' },
+            { text: 'Tests as Evidence, Not Ritual', link: '/quality/tests-as-evidence' },
             { text: 'Test Strategy and Convention', link: '/quality/test-strategy' },
             { text: 'Agent Evaluation and Regression', link: '/quality/agent-evaluation' },
             { text: 'AC IDs and Coverage', link: '/quality/ac-ids-coverage' },

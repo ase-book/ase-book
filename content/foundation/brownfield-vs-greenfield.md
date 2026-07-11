@@ -40,9 +40,9 @@ The same prompt accepts an output layout. Append the target `docs/` structure an
 
 ## The walking skeleton reversed
 
-Alistair Cockburn coined "walking skeleton" in "Crystal Clear" (2004). His version is a thin end-to-end implementation built forward from intent. Enough to prove the architecture works before you fill it in.
+Alistair Cockburn coined "walking skeleton" in "Crystal Clear" (2004). His version is a thin end-to-end implementation built forward from intent. Enough to verify the architecture works before you fill it in.
 
-The agentic-era `skeleton.md` reverses the direction. You are not building a skeleton to prove an architecture, but uncovering the skeleton of an architecture built without one. Same metaphor, opposite direction. The result has the same purpose: it makes the invisible structure visible, so you reason about it and build on it.
+The agentic-era `skeleton.md` reverses the direction. You are not building a skeleton to verify an architecture, but uncovering the skeleton of an architecture built without one. Same metaphor, opposite direction. The result has the same purpose: it makes the invisible structure visible, so you reason about it and build on it.
 
 *Sources: Cockburn, "Crystal Clear: A Human-Powered Methodology for Small Teams" (Addison-Wesley, 2004), origin of the walking-skeleton pattern.*
 

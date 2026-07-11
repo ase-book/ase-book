@@ -55,21 +55,21 @@ Principles about spec-driven development: why specs, how small, when to apply th
 | IEC-SPECS-REVIEW-SPEC-FIRST | Review the spec first: does the intent match? Then review the diff: does the code match the intent? |
 | IEC-SPECS-DEAD-SPEC-WORSE | A dead spec tells the agent authoritatively about behavior the system no longer has. |
 | IEC-SPECS-CONSTRAINTS-IN-FILE | Constraints that live only in human memory are constraints the agent will violate. |
-| IEC-SPECS-DRIFT-DETECTABLE | Intent Engineering does not make your codebase drift-proof. It makes drift detectable and recoverable. |
+| IEC-SPECS-DRIFT-DETECTABLE | Intent Engineering does not make your codebase immune to drift. It makes drift detectable and recoverable. |
 | IEC-SPECS-SPEC-ELIGIBILITY | A typo fix does not earn a spec: define the threshold explicitly. |
 
 ## Testing
 
-Principles about test strategy, acceptance criteria, and what makes a test proof rather than decoration.
+Principles about test strategy, acceptance criteria, and what makes a test evidence rather than decoration.
 
 | ID | Summary |
 |----|---------|
-| IEC-TESTING-TEST-IS-PROOF | A test is proof when it would fail if the implementation diverged from the spec. Otherwise it is decoration. |
+| IEC-TESTING-TEST-IS-EVIDENCE | A test is evidence when it would fail if the implementation diverged from the spec. Otherwise it is decoration. |
 | IEC-TESTING-EVERY-PATH | Every conditional branch, distinct return type, and exception path needs at least one test. |
 | IEC-TESTING-DECLARE-TEST-TYPES | Declare which test types the project uses: the agent defaults to unit tests for everything otherwise. |
 | IEC-TESTING-EXPLICIT-EXCLUSIONS | The agent cannot distinguish "not applicable" from "nobody thought of it". Exclude explicitly. |
-| IEC-TESTING-AC-ARE-TEST-DEFINITIONS | Every acceptance criterion is a test definition waiting to be executed: it needs a stable ID and a proof layer. |
-| IEC-TESTING-POSITIVE-NEGATIVE-MINIMUM | Every acceptance criterion has at least one positive and one negative test. Happy-path-only is not proof. |
+| IEC-TESTING-AC-ARE-TEST-DEFINITIONS | Every acceptance criterion is a test definition waiting to be executed: it needs a stable ID and an evidence layer. |
+| IEC-TESTING-POSITIVE-NEGATIVE-MINIMUM | Every acceptance criterion has at least one positive and one negative test. Happy-path-only is not evidence. |
 | IEC-TESTING-AC-ID-MONOTONE | AC IDs are stable: numbers only go up, prefix is permanent, deleted IDs leave a gap. |
 | IEC-TESTING-REGISTRY-ATOMIC | The AC registry and the spec change together: a scenario without a registry update guessed its ID. |
 
@@ -79,10 +79,10 @@ Principles about the quality path: checkpoints, agent evaluation, deterministic 
 
 | ID | Summary |
 |----|---------|
-| IEC-QUALITY-AUTOMATED-PROOF-MANDATORY | Coding agents generate code faster than manual verification scales. Automated proof is mandatory. |
+| IEC-QUALITY-AUTOMATED-EVIDENCE-MANDATORY | Coding agents generate code faster than manual verification scales. Automated evidence is mandatory. |
 | IEC-QUALITY-THREE-GATES | Quality is three gates in sequence (before, during, after), each looking at what the others cannot see. |
 | IEC-QUALITY-MAXIMIZE-DETERMINISTIC | Maximize deterministic checks: they scale to agentic speeds; manual review does not. |
-| IEC-QUALITY-AGENT-EVAL-LOOP | Tests prove the code is right; agent evaluation proves the agent setup is right: two distinct checks. |
+| IEC-QUALITY-AGENT-EVAL-LOOP | Tests verify the code is right; agent evaluation verifies the agent setup is right: two distinct checks. |
 | IEC-QUALITY-RULES-FIRST-PRINCIPLES-SECOND | Write deterministic rules when detection is possible. Write principles for judgment. |
 | IEC-QUALITY-ONE-PR-PER-CLASS | `docs`, `structural`, and `behavioral` PRs use different review styles: one PR per class. |
 | IEC-QUALITY-CANONICAL-PATTERN-VISIBLE | Make the pattern the agent should follow the easiest pattern to find in the codebase. |

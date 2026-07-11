@@ -17,9 +17,9 @@ checks:
     file: .vitepress/config.mts
     pattern: "agent-evaluation"
 
-  - id: sidebar-has-tests-as-proof
-    description: "Sidebar links to tests-as-proof chapter"
+  - id: sidebar-has-tests-as-evidence
+    description: "Sidebar links to tests-as-evidence chapter"
     type: file_contains
     file: .vitepress/config.mts
-    pattern: "tests-as-proof"
+    pattern: "tests-as-evidence"
     severity: MEDIUM

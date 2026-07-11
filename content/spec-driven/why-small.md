@@ -64,7 +64,7 @@ Splitting is not a failure: a spec that spawns a Part 2 was correctly scoped. Th
 
 ## When the change is genuinely large
 
-Some features pass the split test: one coherent thing, a bit over ten tasks, no clean seam. Sequenced PRs handle this. Use branch names to carry the sequence: `feature/<name>-part-1`, `feature/<name>-part-2`. Share the acceptance-criterion ID namespace across the parts: `FEATURE-001` through `FEATURE-010` for part one, `FEATURE-011` onward for part two. The traceability trail stays continuous across the merge boundary, so months later the archive still shows which test proved which scenario regardless of which PR shipped it.
+Some features pass the split test: one coherent thing, a bit over ten tasks, no clean seam. Sequenced PRs handle this. Use branch names to carry the sequence: `feature/<name>-part-1`, `feature/<name>-part-2`. Share the acceptance-criterion ID namespace across the parts: `FEATURE-001` through `FEATURE-010` for part one, `FEATURE-011` onward for part two. The traceability trail stays continuous across the merge boundary, so months later the archive still shows which test verified which scenario regardless of which PR shipped it.
 
 Part two depends on part one merging. Note that dependency in the part-two proposal so the reviewer knows before opening the diff. Each part merges on its own test pass instead of waiting for a suite that only lands with the final PR.
 

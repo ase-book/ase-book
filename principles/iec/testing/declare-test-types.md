@@ -11,7 +11,7 @@ What matters is that the types the project uses are declared explicitly, not dis
 
 ## Why it matters
 
-Without an explicit declaration, the agent writes unit tests for everything. Endpoints, persistence, contracts, pipelines — all unit tests. The problem surfaces in staging when the real ORM generates a slightly different query than the mock expected. The test proved the unit; it proved nothing about the system.
+Without an explicit declaration, the agent writes unit tests for everything. Endpoints, persistence, contracts, pipelines — all unit tests. The problem surfaces in staging when the real ORM generates a slightly different query than the mock expected. The test verified the unit; it verified nothing about the system.
 
 ## Violations to detect
 
