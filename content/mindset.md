@@ -32,9 +32,15 @@ With coding agents, the safer habit is to think in terms of intent: which decisi
 
 Most AI coding advice loses me here. It talks about prompts, models, autocomplete, demos, and product comparisons instead of asking what the team needs to document before an agent touches code. Then it skips the professional part: separation of concerns, domain modeling, module boundaries, trade-offs, security restrictions, existing structures, tests, and review.
 
-When working on security, the agent starts from the current security practice and the governance rules the company and team selected. There is no room for improvisation here.
+When working on security, the agent starts from the current security practice and the governance rule the company and team selected. There is no room for improvisation here.
 
-The decisions, checks, and constraints belong to the product whether the code was typed or generated. That is why treating the agent as a source of original insight goes wrong so quickly. Code still matters, but with coding agents it starts to look more like output than authorship. I read the shift as a compiler move: a compiler translates sources into machine code, and a coding agent translates intent into application code.
+I first felt this shift before coding agents while working from OpenAPI definitions. The generator did the tedious work faster and more consistently than I did, which left me with the implementation choices I cared about. Coding agents pushed the same feeling into tests. I like tests that demonstrate how a component or service works. I have never enjoyed writing another test only to move a SonarQube coverage number.
+
+Current coding agents changed the balance again for me. In my recent work, a well-planned task often comes back close to how I would have written it, including details I might have patched in later. A few years earlier, the output still carried the rookie mistakes I expected from a junior developer. I no longer assume that implementation is the challenging part, which is stating the intent completely enough that nothing important gets omitted.
+
+After forty years of programming and a gradual move into architecture, documentation and knowledge sharing already occupied more of my time than typing code. Coding agents finished that transition. I still inspect what they produce, but I no longer regard manual coding as the center of my work. The specification has become my programming surface.
+
+The decisions, checks, and constraints belong to the product whether the code was typed or generated. Code still matters, but with coding agents it starts to look more like output than authorship. I read the shift as a compiler move: a compiler translates sources into machine code, and a coding agent translates intent into application code. The comparison only goes so far. A compiler receives formal input. A coding agent works from prose and project context, where something will remain unstated. The developer has to find those gaps and decide whether the result is right.
 
 Software engineering has been moving in this direction for years. Developers already write one artifact and let tools emit another. Coding agents push the same move one layer up. The maintained artifact is no longer only the source code the compiler accepts. It also includes the written intent the developer cites in the review to justify the change.
 

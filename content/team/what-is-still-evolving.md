@@ -26,6 +26,14 @@ Multi-LLM critique (using a second model to review a spec before implementation)
 
 ## What is genuinely open
 
+Documentation freshness worries me more than agent handoff. Files under `docs/` age quickly after a run of change proposals. One or two people end up nursing the documentation and checking whether archived changes altered a decision, design, architecture boundary, or constraint. Agent instructions do not detect the missing update. A skill helps only when somebody remembers to run it. I still resort to asking an agent to compare the documentation against the source tree, which is useful but not a durable control.
+
+OpenSpec and current Spec-Driven Development (SDD) workflows focus on the change and its code. In the workflows I reviewed for this book through mid-2026, I found no convincing feedback path from a completed change into the durable documentation set. [Keeping Documentation Up to Date](../quality/keeping-docs-up-to-date) offers structural tripwires, but those checks detect suspect files rather than understand whether the design is still true. This part needs more work.
+
+Infrastructure is another weak spot in my experience. Continuous Integration and Continuous Delivery (CI/CD), environments, and metrics belong in the intent, but I have worked on product teams that did not own those systems. A separate pull request and another group stood between the feature team and a change to development, staging, or production. The repo-local loop in this book does not account for that coordination cost yet.
+
+There is also a capability floor. Among the coding agents I have used in 2026, weaker and cheaper models miss decisions and ignore instructions often enough to make this workflow frustrating. The book should not imply that any model with file access will behave the same way. Better models will move this floor, so I expect this assessment to need revision.
+
 Multi-repo planning remains a gap in the SDD sources reviewed for this book. When one feature needs coordinated changes across three repositories, somebody still has to sequence the work, line up the PRs, and decide which repo carries the contract change first. OpenSpec's Workspaces roadmap names multi-repo planning as an in-development team problem. That is a straight admission of a gap, not a workflow.
 
 Agent-to-agent handoff, where one agent completes a spec and hands the change folder to a different agent for implementation (across session boundaries), is experimentally described by Yegge's Agent Fleets framing but not yet practiced in any consistent form. The tooling does not yet support reliable agent memory across session boundaries in a way that makes handoff predictable.
@@ -38,10 +46,10 @@ No framework in the sources reviewed for this book has delivered governance with
 
 The bar this book applies to itself is simple: strong claims need strong evidence, synthesis gets labeled, and moving practices get time bounds.
 
-The individual practices (Foundation, Agent Instructions, Spec-Driven Development, Quality) are far enough along to teach directly. The team practices are not. The evidence base is thinner, the patterns are looser, and I expect some of the advice in this chapter to age badly. Better to say that plainly than to sand it down into certainty.
+The individual practices (Foundation, Agent Instructions, Spec-Driven Development, Quality) are far enough along to teach directly, but documentation feedback is not solved. There is less evidence for the team practices, and teams have not converged on one way of working. I expect to revise parts of this chapter as the field develops.
 
 The current SDD tool set is still fragmented: multiple frameworks, different trade-offs, no dominant approach, significant experimentation still underway. That is the picture this book found. The individual-developer story is further along. The team and organization story is still messy.
 
-These are live practice questions, not decorative caveats. A few should settle before the next edition. A few will come back with new names and the same operational headache. That is the view from inside a young field: half the work is learning which problems are still real.
+These questions are unresolved. Some tooling gaps will close before the next edition. Documentation drift, ownership boundaries, and weak review discipline will remain when frameworks get new names. The work now is to distinguish limitations in today's tools from problems that require engineering judgment.
 
 *Sources: ThoughtWorks, Technology Radar Vol 34, April 2026, semantic diffusion across spec-driven development and harness engineering terminology, with no single dominant framework named. The "fragmented" reading of that assessment is this book's.*

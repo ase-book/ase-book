@@ -50,17 +50,19 @@ Embed the size discipline in the agent's instructions. The human review process 
 
 ## The Rule of Ten
 
-Quantity has a threshold. This book calls it the Rule of Ten: ten tasks in a spec, ten files in a PR. I picked ten because it is round, easy to count toward, and easy to recall when you are busy; eight would work, twelve would work. The point is this: a number you cannot hold in your head under deadline pressure is not useful. It is a footnote.
+This book calls the size warning the Rule of Ten: ten tasks in a spec, ten files in a PR. I picked ten because it is round and easy to recall when you are busy. The useful threshold might be eight for one team and twelve for another. Treat it as a reason to inspect the change, not a build gate.
+
+I use it in personal projects and in my team's Way of Working. The count makes me stop and look at the shape of the work. Eight complicated tasks with nested subtasks often turn into thirteen clearer tasks after I split them properly. Fifteen trivial tasks sometimes stay together because the work is still obvious. I do not split those to satisfy the number.
 
 The limit is for the reviewer on the change, not the agent. The agent re-reads a long task list at every step. The reviewer cannot re-read a long diff while also judging whether the intent was right. Past a certain point, the reviewer is sampling the diff instead of checking the whole change.
 
-Calibrate the number to your stack. Go and Java touch interfaces, mocks, and call sites that a dynamic language collapses into one edit, so the practical ceiling is higher. A terse codebase pulls it down. Move it to eight, move it to twelve, tune it to your stack. What does not move is the reason: one reviewer, one pass, the whole change visible at once.
+Task count and file count do not move together. A short `tasks.md` sometimes generates changes across many files, while ten tasks might touch only one or two. The count warns me. Gut feel makes the call: will my colleagues understand this in a review, and will I understand it when I need to fix the code later?
 
-When the task list goes beyond 10, stop. The spec is describing two changes. Find the natural seam, the point where each half ships and stands on its own, and split there.
+Calibrate the number to your stack and team. Go and Java touch interfaces, mocks, and call sites that a dynamic language collapses into one edit. Move the warning to eight or twelve if the review experience supports it. When the count rises and the change stops fitting in one reviewer's head, find the natural seam and split there.
 
 If you cannot find the seam, ask the coding agent to propose the split. It usually sees clearer boundaries than you will. Two specs, two branches, two PRs, with the second proposal referencing the first by spec ID.
 
-Splitting is not a failure: a spec that spawns a Part 2 was correctly scoped. The mechanics of turning acceptance criteria into a task list, one task per criteria cluster, live in the [Spec Lifecycle](./spec-lifecycle) chapter. The rule here is only about when the count is telling you to split.
+Splitting is not a failure. A spec that spawns a Part 2 might be better scoped than the smaller task list you started with. The mechanics of turning acceptance criteria into a task list, one task per criteria cluster, live in the [Spec Lifecycle](./spec-lifecycle) chapter. The number starts the review. It does not settle it.
 
 ## When the change is genuinely large
 

@@ -12,7 +12,11 @@ None of this is perfectionism. The minimum bar is automated evidence that the im
 
 ## The bar a test has to clear
 
-A test counts as evidence when it would fail if the implementation diverged from the spec. Otherwise, it is decoration. My favorite check is crude but honest: open the spec, pick a scenario, break the implementation on purpose, and run the suite. If everything stays green, the tests never exercised that scenario.
+A test counts as evidence when it would fail if the implementation diverged from the spec. Otherwise, it is decoration. My favorite check is crude but honest: open the spec, pick a scenario, break the implementation on purpose, and run the suite. If everything stays green, the tests never exercise that scenario.
+
+I also distrust a complex implementation with one positive test and no negative paths. To find out how the code fails, I have to read the implementation and work out which tests are missing. That takes time, and I might misunderstand the behavior and write the new test against the wrong assumption. Worse is a simple behavior buried under pages of mocks and test setup. At that point I do not only question the test. Code that takes more effort to fake than to execute is often asking for a redesign.
+
+I have seen tests piggyback on shared test helpers carrying their own assumptions and defects. The test appears to exercise the subject under test, but most of the behavior lives in scaffolding nobody is reviewing. This happens when passing the coverage check becomes the goal. A developer writes the quickest test that turns CI green, and a weaker coding agent generates more tests built on the same bad assumptions.
 
 Most suites contain a mix of evidence and decoration, and mutation testing is the practical detector: flip an operator, change a constant, invert a boolean, and see whether anything complains. If the suite still passes, whatever you touched was not under test. ThoughtWorks Technology Radar Vol 34 (April 2026) recommends mutation testing as a feedback control suited to agentic delivery, which matches my reading: it is the automated version of breaking the implementation on purpose.
 

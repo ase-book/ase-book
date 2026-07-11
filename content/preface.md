@@ -19,7 +19,9 @@ This book answers one question: how do you use coding agents in professional sof
 
 Vibe coding is fine for quick prototypes and mocks. Use it when you need a screen mock, a rough feature sketch, or a quick way to tease requirements out of somebody who cannot state them cleanly yet.
 
-The prototype is not the product. Throw it away and start again with the real requirements.
+The prototype is not the product. I have joined teams expected to take over a codebase described as 90 percent done, only to find the challenging 90 percent still missing. The happy path worked. The system did not scale, could not run in the production environment, and had no useful metrics or deployment instructions. Calling it production-ready did not make it so.
+
+My choice in such a situation is to scrap the prototype. Keep the ideas and the feedback it produced, then build from the real requirements. The architecture work usually makes the old implementation look naive anyway. Starting again gives the team something more valuable than rescued code: an understanding of the system and enough control to trust it.
 
 This should not be new advice. Fred Brooks wrote it down in 1975: plan to throw one away. You will anyway. In 1975, throwing work away hurt, since rebuilding from scratch took weeks.
 
@@ -27,7 +29,7 @@ This should not be new advice. Fred Brooks wrote it down in 1975: plan to throw 
 
 In 2026, when most of the build is done by a coding agent, that second pass is cheaper. Rebuilding is less painful than it was when a fresh start took weeks.
 
-The second build is sharper: the dead ends are already mapped and the framework is already picked. The prototype was the conversation, not the artifact.
+A prototype still has a good job. It lets you show an idea, challenge assumptions, and compare designs for a small service or component. Sometimes the right result is a better prototype, followed by another. Once the architecture, operational constraints, authentication, and delivery path are known, the prototype has finished its job. Use what you learned when designing the production system, then start its implementation separately.
 
 A coding agent is not reading your mind. In 2026, a vague prompt still produces the wrong code in production work. State the rules, the intent, and the stack. Use the agent as a sparring partner for architecture and design, but keep the thinking on your side.
 
