@@ -2,7 +2,11 @@
 
 A spec and its tests are supposed to be the same promise written twice. Consider a spec with scenarios and a PR with tests. Some scenarios have no test at all, and some tests cover behavior the spec never mentioned. The reviewer approves it because the tests pass and the diff looks reasonable. The next change breaks the untested scenario, and the team hears about it from a customer.
 
-A spec and a test suite that drift apart silently defeat the point: the spec creates an expectation of traceability the suite no longer honors. The fix is a small piece of mechanics: a stable identifier on every acceptance criterion, and a rule that says no scenario is real unless something with that identifier runs in CI.
+A spec and a test suite that drift apart silently defeat the point. The spec promises traceability, while the suite no longer honors the promise. A stable identifier on every acceptance criterion keeps the link visible, and CI checks whether something carrying the identifier runs.
+
+I first saw the value of acceptance criterion identifiers at a former employer. Customers and developers had one short name for the behavior under discussion. Nobody had to guess which paragraph, ticket comment, or test somebody meant.
+
+The test side bothered me more. Anonymous tests leave no account of why they exist. I end up asking whether I am looking at evidence for an acceptance criterion, a regression test for a bug, or another line added to make a coverage dashboard green. I want a test to demonstrate how a feature works and to name the reason the project keeps it. An agent will generate another test without complaint. I still need to know why the test belongs in the suite.
 
 ## What is an Acceptance Criterion ID?
 
@@ -24,7 +28,9 @@ The syntax is the easy part. A scenario written in correct Gherkin is still weak
 
 ## The recommended field: `Test-type:`
 
-Each scenario in a spec carries one recommended field: `Test-type:`. It records the per-scenario test-layer decision so a reviewer knows what to expect in the review. This is the book's chosen field name. OpenSpec does not require it. The companion repo goes further and makes it mandatory, checked on every scenario. Omit it, and the agent infers the test layer from the scenario content alone, which works most of the time and fails at the edges.
+Each scenario in a spec carries one recommended field: `Test-type:`. It records the per-scenario test-layer decision so a reviewer knows what to expect in the review. I want this choice visible in the spec PR because this is where a reviewer still has time to object. An end-to-end test in Cucumber might be excessive when an integration test covers the boundary at lower cost. Sometimes a fast unit test is enough. An architectural constraint belongs in an architecture test instead of a feature test.
+
+`Test-type:` is this book's chosen field name. OpenSpec does not require it. The companion repo goes further and makes it mandatory, checked on every scenario. Omit the field, and the agent selects the layer from the scenario content alone. The generated test might verify a component, while the acceptance criterion describes behavior visible only through the HTTP boundary.
 
 ```markdown
 #### Scenario: Empty project directory [SC-001]
@@ -97,7 +103,7 @@ The prefix itself is permanent. Never reassign it to a different component. `GV`
 
 A registry that only reports percentages is a dashboard. A reviewer cannot act on a dashboard. The useful form is a work queue: one row per acceptance criterion, one status, one next move.
 
-This book uses three states:
+I use three states for this work queue:
 
 - `covered`: tagged evidence exists at the declared boundary
 - `partial`: some evidence exists, but one observable part is still missing

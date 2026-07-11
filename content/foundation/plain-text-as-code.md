@@ -1,14 +1,16 @@
 # Plain-Text-as-Code
 
-The architecture diagram for your most important service is in a PowerPoint file on a laptop that left the company two months ago. The decision to use eventual consistency was made in a slide review nobody recorded. The retry policy is documented in a Confluence page whose last edit date is 2023.
+I have spent forty years watching useful engineering work disappear into Word documents, PowerPoint decks, Visio files, and whichever proprietary tool was fashionable at the time. The files are often still around. Opening them is another matter. You need the right application and license, sometimes on an old laptop nobody wants to touch. A connector puts one more dependency between the developer and the decision.
 
-Do not rely on the agent reading PowerPoint files or replaying slide reviews. The Confluence page might be reachable through a connector, but only if the agent knows the page exists, knows to look there, and has permissions. The developer who joined yesterday meets the same gates.
+I want the source to remain readable with a text editor. Not necessarily `vi`. I do not like `vi`, although plenty of developers do. The point is that no expensive tool or bloated editing environment should stand between a developer and the architecture.
 
-If the agent needs it, it lives in the repo. If it lives in the repo, it lives in plain text. That is the rule, and almost every other Intent Engineering Foundation practice is downstream of it.
+If the agent needs the information, put the source in the repo as plain text. Almost every other Intent Engineering Foundation practice depends on this constraint.
 
 ## The constraint
 
 Plain text means a format a human reads in a terminal, a Git diff shows line by line, and a language model processes without conversion: Markdown for prose, Mermaid for diagrams, and Markdown Architectural Decision Records (MADR) for decisions. Nothing exotic.
+
+This is also my refusal to let the tool become the work. Rich editors make it tempting to fuss with formatting and animation while the meaning stays vague. Developers need to know what was decided and where the boundaries sit. The diagram only needs to show the relationships clearly. When a presentation or this book needs a rendered image, I prefer SVG because it scales and travels well. I still keep the maintained source in a diffable form.
 
 This is not a migration project. The document starts in the repo, evolves there, and is reviewed in the same PR as the code it describes. If someone needs the same content in Confluence, in a PowerPoint deck, or on a wiki, produce an export, a one-way snapshot. The repo is the source of truth; everything else is derivative output.
 
@@ -22,7 +24,7 @@ Markdown is an unremarkable choice. Major Git hosts render it, and a terminal st
 
 If a decision or convention needs to exist, it lives in a Markdown file in `docs/` or `AGENTS.md`. PR descriptions are too hard for the agent to find, and description quality is too uneven to rely on. Commit messages are not better: some developers write essays, others write `fix`, and the log is not a reliable index of decisions. Code comments are worse because a coding agent treats code as freely modifiable and rewrites or removes comments without hesitation. Humans expect documentation, not annotations buried in source files. Put the decision in a file, with a name, at a known location.
 
-**The question:** does the agent reach it in a fresh session with no chat history, only the repo? If not, it is not documented. Where it lives and how carefully it was written do not matter.
+Test the location with a fresh session. If the agent has only the repo, does it find the decision? If not, the team has stored the information but has not made it part of the engineering workspace.
 
 *Sources: Write the Docs, "Docs as Code" guide (writethedocs.org/guide/docs-as-code, ongoing), docs-as-code as the established practice behind the Markdown-in-repo discipline. The AsciiDoc comparison is this book's synthesis.*
 

@@ -2,9 +2,11 @@
 
 Code often changes first, and the documentation lags behind. The next coding agent reads the document anyway and works from a description the code no longer matches.
 
-The failure is easy to miss because the document still looks authoritative. Nothing in a normal build says the README, design note, or agent instruction file went stale. Tests fail when they stop matching the code. Prose usually does not.
+I have caught the more dangerous version during PR review. A feature introduces a framework or changes a design boundary, but the PR presents the choice as implementation detail. The team never accepted the decision, and no ADR or design document records it. Later an agent finds both the old and new framework in the codebase and uses both. From the agent's view, both are established patterns.
 
-For teams using coding agents, the gap matters more. Stale prose is not passive reference material. The agent reads it as a working context.
+The smaller cases are merely annoying. I have seen an outdated instruction make the agent build and test the entire codebase after a Markdown or configuration edit. You notice because you sit there waiting for work nobody wants. An undocumented framework decision is harder to catch. By the time it surfaces, the wrong choice looks like an ordinary part of the implementation.
+
+Tests fail when they stop matching the code. Prose usually does not, and an absent decision has no file to become stale. This chapter addresses the part a deterministic check reaches. The missing-decision problem still depends on review and team discipline.
 
 This chapter covers one narrow extension of verification: give important documentation a feedback loop. Not semantic understanding. Not model grading prose. A tripwire that turns silent drift into a visible signal.
 
@@ -18,7 +20,7 @@ Tests already have the property documentation lacks. When the code changes and t
 
 Documentation has no equivalent check by default. A design note describing an old retry policy does not fail. An agent instruction file pointing at a renamed file passes every check unless a structural link validator catches it, and a README documenting last month's module boundary still renders cleanly on GitHub.
 
-The asymmetry is the problem. Generated code changes fast. The surrounding prose drifts at human speed.
+Generated code changes fast. The surrounding prose drifts at human speed, without producing an error.
 
 The failure is not only reader confusion. The next agent session starts from false inputs. A stale architecture note makes the agent add a layer the system no longer uses or follow a codebase rule the team already removed because the instruction file still lists it.
 
@@ -60,7 +62,7 @@ referrers-verified-at: 2026-06-20
 
 Once the fields exist, the check stops guessing. The questions are mechanical: did one of the tracked paths change after `content-verified-at`, and does an outside system still depend on this file staying where the referrer expects after `referrers-verified-at`?
 
-This is not a field standard. This book uses it as a working synthesis of the AC-ID idea for prose. The mechanism is structural: one stable marker in the prose, one reference target in code or docs, and one check that verifies the link.
+This is not a field standard. I use it here as a working synthesis of the AC-ID idea for prose: one stable marker in the prose, one reference target in code or docs, and one check that verifies the link.
 
 *Sources: The frontmatter marker and field names are this book's synthesis from AC-ID verification logic applied to prose.*
 
@@ -168,9 +170,9 @@ The dates are bookkeeping markers, not evidence of careful reading. Bumping `con
 
 Cross-cutting documents are awkward. A design note covering four subsystems and two team boundaries has no tidy sibling path list. Those documents need manual `tracked-paths` entries, and many teams will defer the work.
 
-The external inventory is only as good as the discipline behind it. A missing `referred-by` entry means the checker never knows the outside link exists. As of mid-2026, teams with Model Context Protocol (MCP) connectors into Jira or Confluence might confirm some records through APIs, but API confirmation is a higher-maturity extension and a perishable one.
+The external inventory is only as good as the discipline behind it. A missing `referred-by` entry means the checker never knows the outside link exists. As of mid-2026, teams with Model Context Protocol (MCP) connectors into Jira or Confluence might confirm some records through APIs, but API confirmation is a higher-maturity extension and a perishable one. I would not make the basic control depend on a connector. Connectors to ticket and wiki systems still add latency and another unstable network boundary to a check that should be fast.
 
-None of those limits sink the practice. They define it. This control is a tripwire, not semantic verification. For documentation, tripwires carry most of the value because the baseline is silence.
+These limits are why I still regard documentation freshness as one of the largest unresolved parts of the practice. The control is a tripwire, not semantic verification. It points at prose somebody needs to inspect. It cannot tell whether an important design change is missing. It will also accept a new date from somebody who never read the file.
 
 The before-gate in [Before, During, After Checkpoints](./checkpoints) asks whether architecture and instructions are still current. This chapter adds a tripwire for part of that question.
 
