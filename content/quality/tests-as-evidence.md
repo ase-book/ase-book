@@ -6,7 +6,7 @@ Consider a spec with one acceptance criterion: files must not exceed 10 MB. The 
 
 Code coverage will not catch this. Coverage measures whether a test touches a line, and the upload test touches plenty of them. AC coverage asks a harder question: would any test fail if this acceptance criterion were violated?
 
-The same AC admits many implementations, a guard clause, an early return, a validator extracted into its own class, and tests anchored to one implementation go stale when the implementation changes. Tests anchored to the AC survive that churn.
+The same AC admits many implementations, a guard clause, an early return, a validator extracted into its own class, and tests anchored to one implementation go stale when the implementation changes. Tests anchored to the AC stay aligned through that churn.
 
 None of this is perfectionism. The minimum bar is automated evidence that the implementation meets the spec. Below that bar, you are shipping on faith that the change matched the goal.
 

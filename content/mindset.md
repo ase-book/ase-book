@@ -20,7 +20,7 @@ I do not mention product names. I want vendor independence. This book takes the 
 
 I do not care about a vendor's claimed strengths or unique qualities. Those change. The agent needs to read the project, propose a change, run the checks, and hand back a change to review. If one agent stops fitting, I replace it. If two are useful for the same thing, I run both and compare the changes.
 
-Treating the agent as magic means assuming understanding that is not there. Treating it as a silver bullet means skipping the design and judgment work the tool will not do for you. What survives contact with production is implementation labor, reviewed on every change it produces.
+Treating the agent as magic means assuming understanding that is not there. Treating it as a silver bullet means skipping the design and judgment work the tool will not do for you. What reaches production is implementation labor, reviewed on every change the agent produces.
 
 Give the agent a vague instruction and it fills the gap itself, usually wrong. Show it an old pattern in the codebase and it copies that pattern forward, stale conventions included. An architecture rule that only ever existed in a meeting never reaches the agent at all.
 

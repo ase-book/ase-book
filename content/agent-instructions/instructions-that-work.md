@@ -12,7 +12,9 @@ The problem: you do not know what the agent will get wrong until it gets it wron
 
 An instruction written before a failure is a guess. The agent might never need it. Or the agent reads it in a situation you did not foresee, and the guess produces a failure of its own.
 
-My practical rule is to start minimal and add reactively. The agent violates a convention. Write the instruction that prevents it. That instruction is grounded in a real failure. It states the constraint that bit and prevents a repeat, instead of guarding against a problem you only guessed at. Write it immediately: the failure is in front of you, so you point to the exact wrong output and say what to do instead. Wait a day, and you are writing from memory, not from evidence.
+My practical rule is to start minimal and add reactively. The agent violates a convention. Write an instruction addressing the observed failure. The instruction states the constraint that bit and gives later sessions an explicit rule, instead of guarding against a problem you only guessed at.
+
+Write it immediately: the failure is in front of you, so you point to the exact wrong output and say what to do instead. Wait a day, and you are writing from memory, not from evidence.
 
 Only writing after a failure keeps the file short: nothing enters unless a real failure earned it. A short file loads fast, stays readable, and carries only load-bearing rules. A file full of preemptive rules accumulates guesses the repo never exercises.
 
@@ -56,13 +58,13 @@ Package boundaries need the same treatment. "The `payments` module has no depend
 
 ## Let the agent draft the instruction
 
-When a failure happens, the agent has the full context: it produced the wrong output moments ago, and the task that triggered it is still in the session. That makes it the right tool to draft the instruction that prevents a repeat. It also knows what phrasing it responds to, which a human writing in the abstract does not.
+When a failure happens, the agent has the full context: it produced the wrong output moments ago, and the task that triggered it is still in the session. That makes the agent useful for drafting a targeted instruction. The developer still reviews whether the rule addresses the failure without blocking valid work.
 
 Give it the failure and ask for the instruction:
 
 ```text
 The agent produced [X] when it should have produced [Y].
-Write one instruction for the agent instructions file that prevents this.
+Write one instruction for the agent instructions file that addresses this failure.
 
 Requirements:
 - State the constraint, not the outcome ("do not use X" not "write clean X")

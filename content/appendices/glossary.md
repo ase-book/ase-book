@@ -8,7 +8,7 @@ A stable, bracketed identifier (format `[PREFIX-NNN]`, e.g. `[GV-001]`, `[AUTH-0
 
 ## AC registry
 
-A file (`test/ac-registry.md` by convention) that maintains one row per component: prefix, component name, and next available number. Allocate IDs from this file. Increment the counter atomically with the new scenario. Prevents prefix overlap and ID reuse. See [AC IDs and Coverage](/quality/ac-ids-coverage).
+A file (`test/ac-registry.md` by convention) that maintains one row per component: prefix, component name, and next available number. Allocate IDs from this file and increment the counter atomically with the new scenario. A checker uses the registry to reject prefix overlap and ID reuse, as described in [AC IDs and Coverage](/quality/ac-ids-coverage).
 
 ## ADLC (Agentic Development Lifecycle)
 
@@ -54,7 +54,7 @@ A design principle where the tool uses the caller's model provider credentials r
 
 ## Capability-class agent
 
-A coding agent with a thinking model, real tool use, and a plan or architect mode. The book targets this class. The current roster is time-bounded and lives in [Tooling Landscape](/appendices/tooling-landscape). Completion-only tools are out of scope.
+A coding agent with reasoning, tool use, file editing, and a planning mode. The book targets this class rather than one vendor roster. Current time-bounded examples live in [Tooling Landscape](/appendices/tooling-landscape), while completion-only tools remain out of scope.
 
 ## Change folder
 
@@ -130,7 +130,7 @@ What a developer encodes for a coding agent to act on. In this book, intent take
 
 ## Intent Engineering
 
-The practice this book teaches. Within agentic software engineering, intent engineering is the discipline of directing coding agents by engineering well-structured intent rather than writing code directly. Context (Foundation, Agent Instructions) is the substrate that makes intent executable. Specs state the target. Verification verifies the result. See [Introduction](/introduction).
+Intent Engineering is presented here as a paradigm within agentic software engineering. It directs coding agents through maintained engineering intent: durable context and instructions, change-sized specs, evidence, and intent-first review. Prompt engineering remains one local technique inside this larger chain. See [Introduction](/introduction).
 
 ## LeanSpec
 
@@ -176,7 +176,7 @@ A spec-driven-development framework (openspec.dev) built around a change-folder 
 
 ## Prompt engineering
 
-The practice of shaping one prompt or instruction exchange so a model responds usefully. This book treats prompt engineering as a useful but too-small frame for production coding-agent work, where the harder problem is keeping codebase context, specs, tests, and decisions aligned across sessions. See [The Human-Agent Engineering Mindset](/mindset).
+The practice of shaping one prompt or instruction exchange so a model responds usefully. Prompt engineering is a local technique within Intent Engineering. The wider paradigm maintains codebase context, specs, tests, decisions, and review across sessions. See [Introduction](/introduction#why-this-is-more-than-prompt-engineering).
 
 ## skeleton.md
 

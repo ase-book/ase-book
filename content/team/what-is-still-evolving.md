@@ -1,6 +1,6 @@
 # What Is Still Evolving
 
-The individual practices in this book have enough evidence and repetition to teach directly. The team practices need more evidence, and this chapter does not pretend otherwise.
+The individual practices are taught directly. That editorial choice does not amount to empirical validation of Intent Engineering as a combined paradigm. The team practices remain provisional.
 
 The team and cross-team practices are extensions of the individual workflow, not settled field standards. Some of the problems named here are real, documented, and unsolved. That is the bar this book uses.
 
@@ -10,7 +10,7 @@ The individual-scale practices are documented in a growing body of evidence. Spe
 
 Short-lived branches and trunk-based development have decades of documented practice behind them. The Intent Engineering application is narrower: change folder scope matches branch scope, and PR class matches review style.
 
-The failure modes behind all this (incompatible specs, stale agent instructions, context poisoning, agent-accelerated drift) are not speculative. They are team-scale versions of failure modes the published sources already document. The controls above them are still being assembled.
+The working taxonomy groups incompatible specs, stale agent instructions, context poisoning, and agent-accelerated drift as related team-scale failure modes. That grouping is synthesis. The controls above them remain unfinished.
 
 *Sources: Rick Hightower, ["Agentic Coding: GSD vs Spec Kit vs OpenSpec vs Taskmaster AI"](https://pub.spillwave.com/agentic-coding-gsd-vs-spec-kit-vs-openspec-vs-taskmaster-ai-where-sdd-tools-diverge-0414dcb97e46), Spillwave, February 27, 2026, OpenSpec, Spec-Kit, LeanSpec, and GSD as active SDD variants. The change-folder-as-isolation primitive and intent-first PR review mapping are this book's synthesis.*
 
@@ -46,7 +46,11 @@ No framework in the sources reviewed for this book has delivered governance with
 
 The bar this book applies to itself is simple: strong claims need strong evidence, synthesis gets labeled, and moving practices get time bounds.
 
-The individual practices (Foundation, Agent Instructions, Spec-Driven Development, Quality) are far enough along to teach directly, but documentation feedback is not solved. There is less evidence for the team practices, and teams have not converged on one way of working. I expect to revise parts of this chapter as the field develops.
+The individual practices (Foundation, Agent Instructions, Spec-Driven Development, Quality) have enough precedent to teach directly, but documentation feedback is not solved. There is less evidence for the team practices, and teams have not converged on one way of working. I expect to revise parts of this chapter as the field develops.
+
+The next evidentiary step is empirical: worked examples other teams reproduce, reusable templates they adapt, and reports comparing changes before and after adoption. Useful reports should include the failures and upkeep cost, not only the clean result. The paradigm should change when repeated practice exposes a weak boundary, a needless artifact, or a control that fails under deadline pressure.
+
+Intent Engineering is presented as a working synthesis for 2026, not the final form of the discipline. Publication starts the useful part of that process. Teams have to apply the practices, remove what does not earn its upkeep, and report where the model fails.
 
 The current SDD tool set is still fragmented: multiple frameworks, different trade-offs, no dominant approach, significant experimentation still underway. That is the picture this book found. The individual-developer story is further along. The team and organization story is still messy.
 

@@ -1,6 +1,6 @@
 # Overview
 
-The agent does not know your decisions. Intent Engineering gives it the decisions and the change-sized specs it needs to avoid guessing at your system.
+The agent does not know your decisions. Intent Engineering puts decisions, change-sized specs, and verification in the workspace. The agent then has less to infer from code or conversation history.
 
 ```mermaid
 flowchart LR
@@ -29,6 +29,8 @@ flowchart LR
 
 [Team Workflows](/team/) covers how the same practices hold up across a team.
 
+This is broader than prompt engineering. A prompt shapes one exchange. Intent Engineering changes the maintained inputs, the implementation target, and the review path across many sessions.
+
 ## How a session works
 
 ```mermaid
@@ -56,6 +58,8 @@ This book assumes you:
 - already use a capability-class coding agent: reasoning-capable model, real tool use, enough autonomy to carry a plan across a session
 - work on a codebase that outlives the session that started it
 - want consistency across sessions, not only speed within one
+
+Throwaway scripts, exploratory prototypes, and completion-only tools do not need the full discipline. [The Introduction](/introduction#when-a-project-earns-this) defines the boundary, and [Honest Maturity](/appendices/honest-maturity) explains how to adopt only the practices worth their upkeep.
 
 ## Where to start
 

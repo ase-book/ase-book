@@ -24,7 +24,7 @@ A dead spec gives the agent confident instructions about behavior the system no 
 
 Without spec-first discipline, the agent produces code that satisfies the immediate ask and quietly violates an architectural decision nobody read out loud. At human speed, this kind of drift accumulated across quarters. At agent speed, a day of merged PRs adds the architectural contradictions that once took weeks of handwritten changes to produce: the velocity amplifier from [Why Structure Matters](./why-structure), cutting the other way.
 
-The Spec-Driven topic exists because of this mode. Writing the spec before the agent implements gives the agent the intention it needs. Decisions written down as ADRs are constraints the agent will follow. Intent and constraints living only in human memory will be violated.
+The Spec-Driven topic exists because of this mode. Writing the spec before implementation gives the agent a target it would otherwise have to infer. Decisions written down as ADRs enter the agent's context as explicit constraints. Intent left only in developer memory remains exposed to omission or contradiction.
 
 *Sources: Yegge, "Revenge of the junior developer," Sourcegraph blog (March 22, 2025), agent velocity as amplifier.*
 

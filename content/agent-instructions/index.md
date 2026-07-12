@@ -4,6 +4,8 @@
 
 Foundation gives the repo structure. Agent Instructions tells the agent which parts of that structure matter, when to load them, and which defaults to stop trusting.
 
+This topic does not teach a better one-off prompt. It turns project-specific guidance into reviewed, source-controlled input available to later sessions and compatible vendors.
+
 These chapters cover `AGENTS.md`, the instruction hub it points into, instructions that actually change agent behavior, and the limits imposed by the context window. Hooks belong here too, but as an optional enforcement layer, not the starting point.
 
 ## Chapters

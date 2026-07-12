@@ -40,7 +40,7 @@ Principles about context the agent: what goes in `AGENTS.md`, how to write instr
 | IEC-CONTEXT-ONE-SOURCE-OF-TRUTH | One source of truth for agent instructions; vendor files are generated pointers, not authored duplicates. |
 | IEC-CONTEXT-AGENT-CLUELESS-NOT-BROKEN | The agent is not broken, it is clueless. Fix the context before switching models. |
 | IEC-CONTEXT-INSTRUCTION-SKILL-HOOK | Get the instruction right first; add a skill when a procedure repeats; add a hook when forgetting hurts. |
-| IEC-CONTEXT-CAPABILITY-CLASS-TARGETING | Target capability class (thinking + agent + plan mode), not vendor-agnostic vagueness. |
+| IEC-CONTEXT-CAPABILITY-CLASS-TARGETING | Target a capability class (reasoning, tool use, file editing, planning), not one vendor roster. |
 | IEC-CONTEXT-GENERATED-BEATS-DUPLICATE | A generated vendor file is a known point-in-time output; an authored duplicate is already behind. |
 
 ## Specs

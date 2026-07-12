@@ -4,6 +4,8 @@
 
 This topic is about evidence. The spec states the target. The tests, checks, and review structure show whether the implementation actually hit it.
 
+Prompt engineering works on the input. Quality and Verification examines the output against the recorded target. Intent Engineering needs both sides of that boundary.
+
 Tests catch behavior regressions. Evals catch regressions in the agent setup. AC IDs hold traceability together when a spec gets edited. Checkpoints catch the stale document, the missing archive, and the PR that arrived without evidence. For teams that want it, `.principles` adds machine-readable structure checks on top.
 
 None of these practices are new. What changes with coding agents is the rate of change and how quickly informal review starts missing things.

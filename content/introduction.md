@@ -8,11 +8,11 @@ The agent does not know what your team already decided.
 
 That gap is easy to hide in a healthy codebase. The schema looks consistent. The tests are green. The older auth flow looks redundant but carries some rule nobody wrote down. A developer remembers the decision. The agent does not, so it extends the wrong interface and does it neatly.
 
-Coding agents amplify the developer managing them. Bill Doerrfeld put it plainly in early 2026: "AI doesn't create great developers, it amplifies them". An under-informed developer gets the wrong code faster. An experienced developer gets correct code faster.
+Coding agents amplify the developer managing them. Bill Doerrfeld put it plainly in early 2026: "AI doesn't create great developers, it amplifies them". An under-informed developer gets the wrong code faster. An experienced developer gives the agent a better chance of returning the intended change.
 
 *Sources: Bill Doerrfeld, "AI doesn't create great developers, it amplifies them" (LeadDev, January 20, 2026), amplifier framing for agent-assisted development.*
 
-This book calls the missing discipline Intent Engineering: giving the agent enough of your system and intent that it stops guessing at both. The practice here is narrower than the wider "agentic software engineering" language circulating through the field. This book is about the intent you hand to a coding agent, not every problem involved in building agents as products.
+Intent Engineering names the missing discipline: giving the agent enough of your system and intent to reduce the gaps it fills by inference. The scope is narrower than the wider "agentic software engineering" language circulating through the field. The focus is the intent you hand to a coding agent, not every problem involved in building agents as products.
 
 Intent, as this book uses the word, is what you want the agent to build or decide, stated with enough precision that it acts on your purpose instead of its own inference. It has two forms. One is change-sized: a spec for the next change. The other is durable: decisions and conventions that constrain every change after that.
 
@@ -20,7 +20,29 @@ The phrase "intent engineering" did not start here. `intentengineering.dev` uses
 
 *Sources: intentengineering.dev (ongoing), prior use of "intent engineering" in an agent-alignment sense. Don Johnson, "Intent-Driven Development: Define the System Before You Write the Code" (DEV, December 4, 2025), intent-driven development as specification-first software design. Vishal Mysore, "What is Intent Driven Development?" (Medium, March 9, 2026), intent-driven development as outcome-and-constraint framing for AI-assisted execution. intent-driven-development.com (ongoing), intent-above-implementation framing in current workflow language.*
 
+## Why this is more than prompt engineering
+
+Prompt engineering works inside one exchange. Intent Engineering treats the exchange as one step in a longer delivery system. The agent receives versioned context before implementation, a change-sized target during implementation, and evidence plus review after implementation.
+
+| Dimension | Prompt engineering | Intent Engineering |
+| --- | --- | --- |
+| Unit of work | One instruction and response | A maintained codebase and one reviewable change |
+| Inputs | Prompt text and examples | Decisions, agent instructions, specs, code, and tests |
+| Lifetime | The current exchange or session | Versioned artifacts reused across sessions |
+| Feedback | Whether the response looks useful | Whether tests, checks, and review match the stated intent |
+| Ownership | Usually the developer writing the prompt | Developers and reviewers maintaining shared artifacts |
+
+Prompt wording still matters. A precise request wastes less context than a vague one. The paradigm claim starts where the prompt ends: Intent Engineering changes which artifacts the team maintains, which artifact the agent implements from, and which order reviewers inspect the result.
+
+This comparison is original synthesis, not a settled field taxonomy. Karpathy's 2025 post is one visible marker of the prompt-to-context terminology shift. It does not validate the broader paradigm. The argument here extends the distinction across specs, evidence, and the Software Development Life Cycle (SDLC).
+
+*Sources: Andrej Karpathy, "+1 for context engineering over prompt engineering" (June 25, 2025), the prompt-to-context terminology shift. The five-dimension comparison and the paradigm classification are original synthesis.*
+
 The book is OpenSpec-first on purpose. Intent Engineering is the portable practice. OpenSpec is the concrete workflow used here because the examples need one lifecycle, one directory layout, one archive rule, and one companion repo readers can inspect. If your team uses a plain `spec.md`, a local spec format, LeanSpec, Spec-Kit, or an internal workflow, translate the OpenSpec terms to your own spec artifact.
+
+Apply the replacement test to every tool example. A durable control remains useful after replacement of the current agent, spec framework, or companion command. Decisions still belong in version control, and each change still needs a testable target. Reviewers still inspect intent before generated code and collect evidence before merge.
+
+The current tools demonstrate those controls. They do not define them.
 
 *Sources: OpenSpec (openspec.dev), change-folder and delta-spec structure used throughout this book.*
 
@@ -67,5 +89,9 @@ For a service meant to run in production and be maintained by the next developer
 Intent Engineering does not stop drift. It gives you a clearer way to detect drift and recover from it. That is a weaker claim than much of the surrounding agent-engineering material makes, and it is the claim this book defends.
 
 Nor does it try to make the agent deterministic. You are engineering the ground it reasons from: a better picture of your system instead of a guess. The limits of that bargain matter, and [When Intent Engineering Fails](./foundation/when-intent-engineering-fails) takes them up early, before any of the practices are sold as a cure.
+
+The discipline also fails to supply missing product judgment. If nobody with domain authority knows which behavior is right, a polished spec only gives the uncertainty a filename. Exploratory work often needs experiments before durable intent exists. Incident response often needs the smallest safe intervention before documentation cleanup. Apply the relevant pieces later, once the team has a decision worth preserving.
+
+Some environments rule out the workflow entirely. A policy might forbid agent access to the source or production-like data. A safety-critical change might require a qualified review path the current agent workflow does not satisfy. Intent Engineering does not override those constraints. Use the approved process, or do the work without a coding agent.
 
 The next question is structural: where do those decisions, constraints, and evidence live so the agent loads them in the first place? Start with [Foundation](./foundation/index.md).

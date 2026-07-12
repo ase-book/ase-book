@@ -4,6 +4,8 @@
 
 Foundation is where repo structure stops being housekeeping and starts doing engineering work. If the decisions, maps, and constraints are missing or stale, the agent reads the wrong picture of the system and acts on it.
 
+A prompt describes the current request. Foundation preserves decisions later requests depend on. This durable layer is the first point where Intent Engineering reaches beyond prompt engineering.
+
 These chapters cover the document set, the plain-text rule, where the structure fits in an existing SDLC, how to bootstrap a brownfield system, and what still breaks after setup.
 
 ## Chapters

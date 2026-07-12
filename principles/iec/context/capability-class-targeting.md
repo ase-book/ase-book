@@ -3,11 +3,11 @@
 **Layer**: 1
 **Categories**: context, instructions, portability
 **Applies-to**: all
-**Summary**: Target capability class (thinking + agent + plan mode), not vendor-agnostic vagueness.
+**Summary**: Target a capability class (reasoning, tool use, file editing, planning), not one vendor roster.
 
 ## Principle
 
-Capability-class targeting beats vendor-agnostic vagueness. The book targets CLI agents with thinking, agent, and plan modes. The knowledge lives in the repo (`AGENTS.md`, `.agents/`, specs) — portable across tools that share the same capability class. Writing for "any AI tool" means writing for none of them specifically.
+Capability-class targeting beats vendor-agnostic vagueness. The target class includes coding agents with reasoning, tool use, file editing, and a planning mode. The knowledge lives in the repo (`AGENTS.md`, `.agents/`, specs), portable across tools in the same capability class. Writing for "any AI tool" means writing for none of them specifically.
 
 ## Why it matters
 
@@ -21,7 +21,7 @@ Instructions that assume a specific vendor's features become stale when vendors 
 
 ## Good practice
 
-Describe what the agent needs to do, not which vendor command to run. "Resolve the `.principles` hierarchy by walking up from the target file to the git root" works across tools; "run `dot-prime`" only works where that command is installed.
+Describe what the agent needs to do, not which vendor command to run. Apply the replacement test: remove the named agent, framework, or command and check whether the underlying control still makes sense. "Resolve the `.principles` hierarchy by walking up from the target file to the git root" still works after tool replacement. "Run `dot-prime`" only works where that command is installed.
 
 ## Sources
 
